@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Inschrijvingsformulier – CoolTravel</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/custom.css" />
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+  <!-- Container -->
+  <section class="min-h-screen flex items-center justify-center py-20 px-6">
+    <div class="bg-white p-10 rounded-xl shadow-lg w-full max-w-2xl">
+      <h1 class="text-3xl font-bold mb-6 text-center">Inschrijvingsformulier</h1>
+
+      <form id="inschrijfformulier" class="space-y-6">
+        <!-- Naam -->
+        <div class="flex flex-col sm:flex-row gap-4">
+          <div class="w-full">
+            <label class="block text-sm font-medium mb-1">Voornaam</label>
+            <input type="text" name="voornaam" required class="form-input">
+          </div>
+          <div class="w-full">
+            <label class="block text-sm font-medium mb-1">Naam</label>
+            <input type="text" name="naam" required class="form-input">
+          </div>
+        </div>
+
+        <!-- Bedrijf -->
+        <div>
+          <label class="block text-sm font-medium mb-1">Bedrijf (optioneel)</label>
+          <input type="text" name="bedrijf" class="form-input">
+        </div>
+
+        <!-- Adres -->
+        <div>
+          <label class="block text-sm font-medium mb-1">Adres</label>
+          <input type="text" name="adres" required class="form-input">
+        </div>
+
+        <!-- Postcode -->
+        <div>
+          <label class="block text-sm font-medium mb-1">Postcode</label>
+          <input type="text" name="postcode" required class="form-input">
+        </div>
+
+        <!-- GSM & Email -->
+        <div class="flex flex-col sm:flex-row gap-4">
+          <div class="w-full">
+            <label class="block text-sm font-medium mb-1">GSM-nummer</label>
+            <input type="tel" name="gsm" required class="form-input">
+          </div>
+          <div class="w-full">
+            <label class="block text-sm font-medium mb-1">E-mailadres</label>
+            <input type="email" name="email" required class="form-input">
+          </div>
+        </div>
+
+        <!-- Geboortedatum -->
+        <div>
+          <label class="block text-sm font-medium mb-1">Geboortedatum</label>
+          <input type="date" name="geboortedatum" required class="form-input">
+        </div>
+
+        <!-- Verzekering -->
+        <div>
+          <label class="block text-sm font-medium mb-2">Annulatie- en bijstandsverzekering gewenst?</label>
+          <div class="flex items-center gap-6">
+            <label class="inline-flex items-center">
+              <input type="radio" name="verzekering" value="ja" required class="form-radio text-blue-600">
+              <span class="ml-2">Ja</span>
+            </label>
+            <label class="inline-flex items-center">
+              <input type="radio" name="verzekering" value="nee" class="form-radio text-blue-600">
+              <span class="ml-2">Nee</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Verzenden -->
+        <div class="pt-4">
+          <button type="submit" class="btn-primary w-full">Inschrijving versturen</button>
+        </div>
+      </form>
+
+      <div id="bevestiging" class="text-center text-green-600 font-medium mt-4 hidden">✅ Inschrijving succesvol verzonden!</div>
+    </div>
+  </section>
+
+  <!-- JavaScript -->
+  <script>
+  const form = document.getElementById('inschrijfformulier');
+  const bevestiging = document.getElementById('bevestiging');
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const data = {
+      voornaam: form.voornaam.value,
+      naam: form.naam.value,
+      bedrijf: form.bedrijf.value,
+      adres: form.adres.value,
+      postcode: form.postcode.value,
+      gsm: form.gsm.value,
+      email: form.email.value,
+      geboortedatum: form.geboortedatum.value,
+      verzekering: form.querySelector('[name="verzekering"]:checked')?.value || ""
+    };
+
+    fetch("JOUW_WEBAPP_URL_HIER", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(data)
+    })
+    .then(response => {
+      if (response.ok) {
+        form.reset();
+        bevestiging.classList.remove("hidden");
+      } else {
+        alert("Er ging iets mis met het versturen van je inschrijving.");
+      }
+    })
+    .catch(error => {
+      console.error("Fout tijdens verzenden:", error);
+      alert("Netwerkfout. Controleer je verbinding of probeer opnieuw.");
+    });
+  });
+</script>
+
+
+</body>
+</html>

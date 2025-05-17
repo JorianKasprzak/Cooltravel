@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CoolTravel – Short Ski’s voor Bedrijven</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="css/custom.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+  <script src="js/menu.js" defer></script>
+
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+<body class="bg-white text-gray-800">
+
+  <!-- Navbar -->
+  <header class="fixed top-0 left-0 w-full bg-white border-b z-50 shadow-sm">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <a href="#" class="text-xl font-bold text-[#0B2545]">Cool Travel</a>
+      <nav class="hidden md:flex space-x-6 text-sm">
+        <a href="#home" class="text-blue-600 font-semibold">Home</a>
+        <a href="#aanbod" class="hover:text-blue-600">Aanbod</a>
+        <a href="#troeven" class="hover:text-blue-600">Troeven</a>
+        <a href="#contact" class="hover:text-blue-600">Contact</a>
+      </nav>
+      <button id="menu-toggle" class="md:hidden text-2xl">☰</button>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden flex-col px-6 pb-4 text-sm space-y-3">
+      <a href="#home">Home</a>
+      <a href="#aanbod">Aanbod</a>
+      <a href="#troeven">Troeven</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section id="home" class="relative h-screen pt-20 overflow-hidden">
+  <!-- Background Slides -->
+  <div class="absolute inset-0 z-0">
+    <div class="absolute inset-0 transition-opacity duration-1000 opacity-100 fade-slide" style="background-image: url('images/hero-ski.jpg'); background-size: cover; background-position: center;"></div>
+    <div class="absolute inset-0 transition-opacity duration-1000 opacity-0 fade-slide" style="background-image: url('images/hero-ski2.png'); background-size: cover; background-position: center;"></div>
+    <div class="absolute inset-0 transition-opacity duration-1000 opacity-0 fade-slide" style="background-image: url('images/hero-ski3.png'); background-size: cover; background-position: center;"></div>
+    <div class="absolute inset-0 transition-opacity duration-1000 opacity-0 fade-slide" style="background-image: url('images/hero-ski4.png'); background-size: cover; background-position: center;"></div>
+  </div>
+
+  <!-- Overlay -->
+  <div class="absolute inset-0 bg-black/30 z-10"></div>
+
+  <!-- Content -->
+  <div class="absolute inset-0 z-20 flex items-center justify-center text-center px-6">
+    <div class="text-white max-w-2xl">
+      <h1 class="text-4xl md:text-5xl font-extrabold mb-4 leading-tight">Short ski’s op maat</h1>
+      <p class="mb-6 text-base md:text-lg opacity-90">Gespecialiseerd in Short-ski's voor bedrijven.</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="#aanbod" class="btn-primary">Vraag je short ski aan</a>
+        <a href="mailto:info@cooltravel.be" class="btn-outline">✉️ Mail ons</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Dots -->
+  <div class="absolute bottom-6 left-1/2 -translate-x-1/2 flex space-x-2 z-30">
+    <div class="w-3 h-3 bg-white/50 rounded-full" id="dot0" data-index="0"></div>
+    <div class="w-3 h-3 bg-white/30 rounded-full" id="dot1" data-index="1"></div>
+    <div class="w-3 h-3 bg-white/30 rounded-full" id="dot2" data-index="2"></div>
+    <div class="w-3 h-3 bg-white/30 rounded-full" id="dot3" data-index="3"></div>
+  </div>
+</section>
+
+
+  <!-- AANBOD -->
+  <section id="aanbod" class="py-24 bg-gray-50">
+  <div class="max-w-6xl mx-auto px-6 text-center">
+    <h2 class="text-3xl font-bold mb-4">Short ski’s op maat voor bedrijven</h2>
+    <p class="text-gray-600 max-w-2xl mx-auto mb-12">
+      Wij organiseren zakelijke short ski's volledig op maat. Hieronder zie je onze populairste formule en een voorbeeld op aanvraag.
+    </p>
+
+    <div class="grid md:grid-cols-2 gap-8 text-left">
+      
+      <!-- Aanbevolen pakket -->
+      <div class="package-card">
+        <h3>🏔️ Zauchensee – Hotel First Peak</h3>
+        <p>Onze populairste locatie: een charmant bergdorp met directe toegang tot het Ski Amadé-gebied (750 km pistes). Verblijf in het gloednieuwe luxe Hotel First Peak. Ideaal voor teambuilding en bedrijfsuitjes.</p>
+        <span>Prijs op aanvraag</span>
+      </div>
+
+      <!-- Voorbeeld op maat -->
+      <div class="package-card">
+        <h3>🛷 Short Ski op aanvraag</h3>
+        <p>Op zoek naar een ski-uitstap voor je team in Frankrijk, Italië of Zwitserland? Wij organiseren short ski’s op maat, met vervoer, verblijf en activiteiten volledig afgestemd op jouw bedrijf.</p>
+        <span>Prijs op aanvraag</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+  <!-- TROEVEN -->
+  <section id="troeven" class="py-24">
+    <div class="max-w-6xl mx-auto px-6 text-center">
+      <h2 class="text-3xl font-bold mb-12">Waarom kiezen voor Cool Travel?</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="card-hover bg-white p-6 rounded-xl shadow">
+          <h3 class="font-bold mb-2">🏨 Luxe hotels</h3>
+          <p class="text-sm text-gray-600">De beste hotels vlak aan de piste gelegen.</p>
+        </div>
+        <div class="card-hover bg-white p-6 rounded-xl shadow">
+          <h3 class="font-bold mb-2">🚍 Alles geregeld</h3>
+          <p class="text-sm text-gray-600">Verblijf, transport, skipassen, begeleiding – alles op maat voor bedrijven.</p>
+        </div>
+        <div class="card-hover bg-white p-6 rounded-xl shadow">
+          <h3 class="font-bold mb-2">⭐ Teambuilding & sfeer</h3>
+          <p class="text-sm text-gray-600">Combineer ontspanning, connectie & onvergetelijke momenten op de piste.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <form class="bg-white rounded-xl shadow-lg p-8 space-y-6 text-left max-w-xl mx-auto">
+  <div>
+    <label class="block text-sm font-semibold mb-1 text-gray-700">Naam</label>
+    <input type="text" placeholder="Jouw naam / bedrijfsnaam" required class="form-input">
+  </div>
+  <div>
+    <label class="block text-sm font-semibold mb-1 text-gray-700">E-mailadres</label>
+    <input type="email" placeholder="voorbeeld@bedrijf.be" required class="form-input">
+  </div>
+  <div>
+    <label class="block text-sm font-semibold mb-1 text-gray-700">Bericht of aanvraag</label>
+    <textarea rows="4" placeholder="Schrijf hier je vraag of offerteaanvraag..." required class="form-input resize-none"></textarea>
+  </div>
+  <button type="submit" class="btn-primary w-full">✅ Verstuur aanvraag</button>
+  <p class="text-sm text-center text-gray-500 mt-2">📞 Liever direct contact? Bel ons op <a href="tel:+32xxxxx" class="underline text-blue-300 hover:text-white">+32 xxxx</a></p>
+</form>
+
+
+  <!-- FOOTER -->
+  <footer class="text-center text-sm py-6 text-gray-500 bg-gray-100">
+    © 2025 CoolTravel – Alle rechten voorbehouden
+  </footer>
+
+
+  <script>
+  const slides = document.querySelectorAll('.fade-slide');
+  const dots = [0,1,2,3].map(i => document.getElementById('dot'+i));
+  let current = 0;
+  let interval;
+
+  function showSlide(index) {
+    slides[current].classList.remove('opacity-100');
+    slides[current].classList.add('opacity-0');
+    dots[current].classList.remove('bg-white/50');
+    dots[current].classList.add('bg-white/30');
+
+    current = index;
+    slides[current].classList.remove('opacity-0');
+    slides[current].classList.add('opacity-100');
+    dots[current].classList.remove('bg-white/30');
+    dots[current].classList.add('bg-white/50');
+  }
+
+  function nextSlide() {
+    showSlide((current + 1) % slides.length);
+  }
+
+  function startSlider() {
+    interval = setInterval(nextSlide, 6000);
+  }
+
+  dots.forEach(dot => {
+    dot.addEventListener('click', (e) => {
+      clearInterval(interval);
+      showSlide(parseInt(e.target.dataset.index));
+      startSlider();
+    });
+  });
+
+  startSlider();
+</script>
+
+
+</body>
+</html>
