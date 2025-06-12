@@ -1,18 +1,8 @@
 {
   "rewrites": [
-    { "source": "/", "destination": "/index.html" }
-  ],
-  "redirects": [
     {
-      "source": "/(.*)",
-      "has": [
-        {
-          "type": "host",
-          "value": "cooltravel.be"
-        }
-      ],
-      "destination": "https://www.cooltravel.be/:1",
-      "permanent": true
+      "source": "/",
+      "destination": "/index.html"
     }
   ]
 }
