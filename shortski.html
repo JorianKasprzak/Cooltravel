@@ -5,11 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Short Ski voor Bedrijven – CoolTravel</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/custom.css" />
-  <style>body { font-family: 'Inter', sans-serif; }</style>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <script src="js/menu.js" defer></script>
 </head>
-<body class="bg-white text-gray-800">
+<body class="bg-white text-gray-800 font-inter">
 
   <header class="bg-white border-b border-gray-200 fixed top-0 left-0 w-full z-50 shadow-sm">
     <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
@@ -17,44 +18,88 @@
       <nav class="space-x-6 text-sm hidden md:flex">
         <a href="index.html" class="hover:text-blue-600">Home</a>
         <a href="aanbod.html" class="hover:text-blue-600">Aanbod</a>
-        <a href="shortski.html" class="text-blue-600 font-semibold">Short Ski</a>
-        <a href="zauchensee.html" class="hover:text-blue-600">Locatie</a>
+
         <a href="contact.html" class="hover:text-blue-600">Contact</a>
       </nav>
     </div>
   </header>
 
+  <!-- Hero -->
   <section class="pt-32 pb-20 bg-blue-50 text-center">
     <div class="max-w-3xl mx-auto px-6">
-      <h1 class="text-4xl font-bold mb-4">Short Ski’s voor Bedrijven</h1>
-      <p class="text-gray-700">Combineer plezier, ontspanning en teambuilding in de Oostenrijkse Alpen – volledig verzorgd door CoolTravel.</p>
+      <h1 class="text-4xl font-bold mb-4">🏢 Short Ski’s voor Bedrijven</h1>
+      <p class="text-gray-700">Snel weg met je team? Combineer ontspanning, sneeuw en teambuilding in één krachtige trip.</p>
     </div>
   </section>
 
-  <section class="max-w-6xl mx-auto px-6 py-20 grid md:grid-cols-2 gap-12 items-center">
-    <div>
-      <h2 class="text-2xl font-bold mb-4">Waarom kiezen voor een short ski?</h2>
-      <ul class="list-disc list-inside text-gray-600 space-y-2 text-sm">
-        <li>✅ Snel en betaalbaar wintermoment voor jouw team</li>
-        <li>✅ Perfecte mix van ontspanning en bonding</li>
-        <li>✅ Geen werkdruk of lange afwezigheid</li>
-        <li>✅ Vaste vertrekdata en op maat geplande reizen</li>
+  <!-- Voor wie -->
+  <section class="py-16 bg-white">
+    <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+      <div data-aos="fade-right">
+        <img src="images/hero-ski3.png" alt="Short Ski voor bedrijven" class="rounded-xl shadow-lg">
+      </div>
+      <div data-aos="fade-left">
+        <h2 class="text-3xl font-bold mb-4">Voor wie is een short ski ideaal?</h2>
+        <p class="text-gray-600 mb-4">Onze short ski’s zijn ontworpen voor bedrijven, ziekenhuizen, teams en KMO’s die op korte tijd willen genieten van sneeuw, sfeer en verbinding.</p>
+        <p class="text-gray-600 mb-4">Deze trips zijn perfect als teambuilding, incentive of ontspannende break voor je personeel.</p>
+        <a href="contact.html" class="btn-primary mt-4 inline-block">Vraag offerte aan</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pakketten -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">📦 Voorbeeldformules</h2>
+      <div class="grid md:grid-cols-3 gap-8 text-left">
+        <div class="package-card" data-aos="zoom-in">
+          <h3>3 Dagen Short Ski</h3>
+          <p>Vertrek op donderdagavond, skiën van vrijdag tot zondag, terug zondagavond.</p>
+          <span>Vanaf €625 p.p.</span>
+        </div>
+        <div class="package-card" data-aos="zoom-in" data-aos-delay="100">
+          <h3>4 Dagen Short Ski</h3>
+          <p>Extra ontspanning: vertrek woensdagavond, ski van donderdag tot zondag.</p>
+          <span>Vanaf €695 p.p.</span>
+        </div>
+        <div class="package-card" data-aos="zoom-in" data-aos-delay="200">
+          <h3>Short Ski op maat</h3>
+          <p>Kies zelf de data, bestemming en services. Wij zorgen voor een offerte op maat van jouw team.</p>
+          <span>Prijs op aanvraag</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Inbegrepen -->
+  <section class="py-16 bg-white">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h2 class="text-3xl font-bold mb-6">✅ Wat is inbegrepen?</h2>
+      <ul class="text-gray-600 space-y-2 text-left max-w-xl mx-auto">
+        <li>🚌 Vervoer per luxe autocar of eigen regeling</li>
+        <li>🏨 Hotelverblijf op toplocatie incl. ontbijt en avondeten</li>
+        <li>⛷️ Skipas voor alle dagen</li>
+        <li>💼 Optionele meeting room, teambuilding of gids</li>
+        <li>🎉 Après-ski of activiteit op maat</li>
       </ul>
     </div>
-    <div>
-      <img src="images/hero-ski3.png" alt="Short Ski" class="rounded-xl shadow-md">
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16 bg-blue-50 text-center">
+    <div class="max-w-4xl mx-auto px-6" data-aos="fade-up">
+      <h2 class="text-3xl font-bold mb-4">🎯 Klaar voor een sneeuwtrip met je team?</h2>
+      <p class="text-gray-700 mb-6">Contacteer ons vandaag nog voor een vrijblijvende offerte op maat van jouw bedrijf.</p>
+      <a href="contact.html" class="btn-primary">Vraag offerte aan</a>
     </div>
   </section>
 
-  <section class="bg-[#0B2545] text-white text-center py-20">
-    <h2 class="text-3xl font-bold mb-4">Wij doen alles voor jou</h2>
-    <p class="text-gray-200 max-w-2xl mx-auto mb-6">Van vervoer tot hotel, skipassen en begeleiding: CoolTravel ontzorgt je volledig. Jij hoeft enkel je ski’s mee te brengen.</p>
-    <a href="contact.html" class="bg-white text-[#0B2545] px-6 py-3 rounded font-semibold hover:bg-gray-100 transition">Offerte aanvragen</a>
-  </section>
-
+  <!-- Footer -->
   <footer class="text-sm text-center py-6 text-gray-500 bg-gray-100">
-    © 2025 CoolTravel — Alle rechten voorbehouden
+    © 2025 CoolTravel – Specialist in skivakanties sinds 1980
   </footer>
 
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init({ once: true });</script>
 </body>
 </html>

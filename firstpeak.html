@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FIRSTpeak Zauchensee – Luxe Ski & Wellness</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="css/custom.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <script src="js/menu.js" defer></script>
+</head>
+<body class="bg-white text-gray-800 font-inter">
+
+  <!-- Navbar -->
+  <header class="bg-white border-b border-gray-200 fixed top-0 left-0 w-full z-50 shadow-sm">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <a href="index.html" class="text-lg font-bold text-gray-900 hover:text-blue-700">CoolTravel</a>
+      <nav class="space-x-6 text-sm hidden md:flex">
+        <a href="index.html" class="hover:text-blue-600">Home</a>
+        <a href="aanbod.html" class="hover:text-blue-600">Aanbod</a>
+
+        <a href="contact.html" class="hover:text-blue-600">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="pt-32 pb-20 bg-blue-50 text-center">
+    <div class="max-w-3xl mx-auto px-6">
+      <h1 class="text-4xl font-bold mb-4">🏔️ FirstPeak Zauchensee</h1>
+      <p class="text-gray-700">Luxe, wellness en ski-in/ski-out in het hart van de Oostenrijkse Alpen.</p>
+    </div>
+  </section>
+
+<!-- Hotel Overview -->
+<section class="py-16 bg-white">
+  <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+    <div data-aos="fade-right">
+      <img src="images/firstpeak1.jpg" alt="FIRSTpeak Zauchensee" class="rounded-xl shadow-lg w-full h-[360px] md:h-[420px] object-cover">
+
+    </div>
+    <div data-aos="fade-left">
+      <h2 class="text-3xl font-bold mb-4">Luxe verblijf aan de piste</h2>
+      <p class="text-gray-600 mb-4">
+        <strong>FirstPeak Zauchensee</strong> is een gloednieuw viersterren superior hotel, perfect gelegen aan de piste en direct naast de skilift.
+      </p>
+      <p class="text-gray-600 mb-4">
+        De moderne kamers en suites bieden uitzicht op de bergen en zijn uitgerust met een balkon, minibar, flatscreen-tv, WiFi en een elegante badkamer. Het interieur ademt rust, stijl en alpine comfort.
+      </p>
+      <p class="text-gray-600 mb-4">
+        In de wellnesszone vind je onder andere een panoramasauna, stoombad, infraroodruimte, moderne fitness en een sfeervolle relaxruimte met bergzicht. Alles is gericht op ontspanning na een dag op de latten.
+      </p>
+      <p class="text-gray-600 mb-4">
+        In het restaurant geniet je van een uitgebreid ontbijtbuffet met lokale producten, gevolgd door een verfijnd meer-gangen diner in de avond. Speciale diëten (vegetarisch, vegan, glutenvrij) zijn mogelijk op aanvraag.
+      </p>
+      <a href="contact.html" class="btn-primary mt-4 inline-block">Vraag offerte aan</a>
+    </div>
+  </div>
+</section>
+
+
+
+
+<!-- Kamertypes zonder prijsvermelding -->
+<section class="py-16 bg-gray-50">
+  <div class="max-w-6xl mx-auto px-6">
+    <h2 class="text-3xl font-bold text-center mb-12">🛏️ Kamertypes beschikbaar</h2>
+    <div class="grid md:grid-cols-3 gap-8 text-left">
+      <div class="package-card" data-aos="zoom-in">
+        <h3>Deluxe Kamer</h3>
+        <p>Comfortabele kamer met balkon, moderne badkamer, minibar en uitzicht op de bergen.</p>
+      </div>
+      <div class="package-card" data-aos="zoom-in" data-aos-delay="100">
+        <h3>Junior Suite</h3>
+        <p>Ruime suite met aparte zithoek, ideaal voor koppels of kleine families die net dat tikkeltje extra wensen.</p>
+      </div>
+      <div class="package-card" data-aos="zoom-in" data-aos-delay="200">
+        <h3>Penthouse Suite</h3>
+        <p>Topklasse suite met privé sauna, panoramisch uitzicht, en maximale rust & luxe voor een exclusieve ervaring.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <!-- Wellness & Spa -->
+  <section class="py-16 bg-white">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h2 class="text-3xl font-bold mb-6">💆‍♀️ Wellness & Spa</h2>
+      <ul class="text-gray-600 space-y-2 text-left max-w-xl mx-auto">
+        <li>🏊‍♂️ Binnenzwembad</li>
+        <li>🧖‍♂️ Sauna, stoombad en ontspanningsruimtes</li>
+        <li>💆‍♀️ Massages en schoonheidsbehandelingen (alleen in de winter)</li>
+        <li>🏋️‍♀️ Fitnessruimte met moderne apparatuur</li>
+      </ul>
+    </div>
+  </section>
+
+
+    <!-- Foto Carousel -->
+<section class="py-16 bg-white">
+  <div class="max-w-4xl mx-auto px-6 text-center">
+    <h2 class="text-3xl font-bold mb-6">📸 Meer foto’s van FIRSTpeak</h2>
+
+    <div class="relative" id="carousel">
+      <div class="overflow-hidden rounded-xl shadow-lg">
+        <img id="carouselImage" src="images/firstpeak1.jpg" alt="First Peak foto" class="w-full h-auto transition duration-500">
+      </div>
+      <!-- Vorige / Volgende knoppen -->
+      <button onclick="prevImage()" class="absolute left-0 top-1/2 -translate-y-1/2 px-4 py-2 bg-white bg-opacity-70 hover:bg-opacity-90 rounded-r">
+        ‹
+      </button>
+      <button onclick="nextImage()" class="absolute right-0 top-1/2 -translate-y-1/2 px-4 py-2 bg-white bg-opacity-70 hover:bg-opacity-90 rounded-l">
+        ›
+      </button>
+    </div>
+
+    <!-- Dots -->
+    <div class="flex justify-center gap-2 mt-4" id="dots"></div>
+  </div>
+</section>
+  <!-- CTA -->
+  <section class="py-16 bg-blue-50 text-center">
+    <div class="max-w-4xl mx-auto px-6" data-aos="fade-up">
+      <h2 class="text-3xl font-bold mb-4">🎯 Klaar voor een luxe skivakantie?</h2>
+      <p class="text-gray-700 mb-6">Neem contact met ons op voor een op maat gemaakte offerte voor uw verblijf in FIRSTpeak Zauchensee.</p>
+      <a href="contact.html" class="btn-primary">Vraag offerte aan</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-sm text-center py-6 text-gray-500 bg-gray-100">
+    © 2025 CoolTravel – Specialist in skivakanties sinds 1980
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init({ once: true });</script>
+  <script>
+  const images = [
+    'images/firstpeak1.jpg',
+    'images/firstpeak3.jpg',
+    'images/firstpeak4.jpg',
+    'images/firstpeak5.jpg',
+    'images/firstpeak6.jpg',
+    'images/firstpeak7.jpg',
+    'images/firstpeak8.jpg',
+    'images/firstpeak9.jpg',
+    'images/firstpeak10.jpg',
+    'images/firstpeak11.jpg',
+    'images/firstpeak12.jpg'
+  ];
+
+  let current = 0;
+
+  function showImage(index) {
+    document.getElementById('carouselImage').src = images[index];
+    updateDots(index);
+  }
+
+  function nextImage() {
+    current = (current + 1) % images.length;
+    showImage(current);
+  }
+
+  function prevImage() {
+    current = (current - 1 + images.length) % images.length;
+    showImage(current);
+  }
+
+  function updateDots(index) {
+    const dots = document.querySelectorAll('#dots button');
+    dots.forEach((dot, i) => {
+      dot.classList.toggle('bg-blue-600', i === index);
+      dot.classList.toggle('bg-gray-300', i !== index);
+    });
+  }
+
+  // Dot navigatie
+  window.onload = function () {
+    const dotContainer = document.getElementById('dots');
+    images.forEach((_, i) => {
+      const dot = document.createElement('button');
+      dot.className = 'w-3 h-3 rounded-full bg-gray-300';
+      dot.onclick = () => {
+        current = i;
+        showImage(i);
+      };
+      dotContainer.appendChild(dot);
+    });
+    showImage(0);
+  };
+</script>
+</body>
+</html>

@@ -1,193 +1,215 @@
 <!DOCTYPE html>
 <html lang="nl">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CoolTravel – Short Ski’s voor Bedrijven</title>
-
+  <title>CoolTravel – Skivakanties op maat</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="css/custom.css" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   <script src="js/menu.js" defer></script>
+  <meta name="description"
+    content="Short ski’s voor bedrijven, luxe skivakanties & budget snowtrips – georganiseerd door CoolTravel. Al 40 jaar dé specialist in skireizen." />
+  <meta property="og:title" content="CoolTravel – Skivakanties op maat" />
+  <meta property="og:image" content="images/hero-ski.jpg" />
 
-  <style>
-    body {
-      font-family: 'Inter', sans-serif;
-      scroll-behavior: smooth;
-    }
-  </style>
 </head>
-<body class="bg-white text-gray-800">
+
+<body class="bg-white text-gray-800 font-inter">
 
   <!-- Navbar -->
-  <header class="fixed top-0 left-0 w-full bg-white border-b z-50 shadow-sm">
+  <header class="fixed top-0 left-0 w-full z-50 backdrop-blur bg-white/80 border-b shadow-sm">
     <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-      <a href="#" class="text-xl font-bold text-[#0B2545]">Cool Travel</a>
-      <nav class="hidden md:flex space-x-6 text-sm">
-        <a href="#home" class="text-blue-600 font-semibold">Home</a>
-        <a href="#aanbod" class="hover:text-blue-600">Aanbod</a>
-        <a href="#troeven" class="hover:text-blue-600">Troeven</a>
-        <a href="#contact" class="hover:text-blue-600">Contact</a>
+      <a href="#" class="text-xl font-extrabold text-[#0B2545] tracking-tight">CoolTravel</a>
+      <nav class="hidden md:flex space-x-6 text-sm font-medium">
+        <a href="aanbod.html" class="hover:text-blue-600">Aanbod</a>
+        <a href="index.html#over" class="hover:text-blue-600">Over ons</a>
+        <a href="contact.html" class="hover:text-blue-600">Contact</a>
+
       </nav>
       <button id="menu-toggle" class="md:hidden text-2xl">☰</button>
     </div>
-    <div id="mobile-menu" class="hidden md:hidden flex-col px-6 pb-4 text-sm space-y-3">
-      <a href="#home">Home</a>
-      <a href="#aanbod">Aanbod</a>
-      <a href="#troeven">Troeven</a>
-      <a href="#contact">Contact</a>
+    <div id="mobile-menu" class="hidden md:hidden flex-col px-6 pb-4 text-sm space-y-3 font-medium">
+      <a href="aanbod.html">Aanbod</a>
+      <a href="index.html#over">Over ons</a>
+      <a href="contact.html">Contact</a>
+
+
+
     </div>
   </header>
 
   <!-- HERO -->
   <section id="home" class="relative h-screen pt-20 overflow-hidden">
-  <!-- Background Slides -->
-  <div class="absolute inset-0 z-0">
-    <div class="absolute inset-0 transition-opacity duration-1000 opacity-100 fade-slide" style="background-image: url('images/hero-ski.jpg'); background-size: cover; background-position: center;"></div>
-    <div class="absolute inset-0 transition-opacity duration-1000 opacity-0 fade-slide" style="background-image: url('images/hero-ski2.png'); background-size: cover; background-position: center;"></div>
-    <div class="absolute inset-0 transition-opacity duration-1000 opacity-0 fade-slide" style="background-image: url('images/hero-ski3.png'); background-size: cover; background-position: center;"></div>
-    <div class="absolute inset-0 transition-opacity duration-1000 opacity-0 fade-slide" style="background-image: url('images/hero-ski4.png'); background-size: cover; background-position: center;"></div>
-  </div>
-
-  <!-- Overlay -->
-  <div class="absolute inset-0 bg-black/30 z-10"></div>
-
-  <!-- Content -->
-  <div class="absolute inset-0 z-20 flex items-center justify-center text-center px-6">
-    <div class="text-white max-w-2xl">
-      <h1 class="text-4xl md:text-5xl font-extrabold mb-4 leading-tight">Short ski’s op maat</h1>
-      <p class="mb-6 text-base md:text-lg opacity-90">Gespecialiseerd in Short-ski's voor bedrijven.</p>
-      <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="#aanbod" class="btn-primary">Vraag je short ski aan</a>
-        <a href="mailto:info@cooltravel.be" class="btn-outline">✉️ Mail ons</a>
+    <div class="absolute inset-0 z-0">
+      <div class="absolute inset-0 transition-opacity duration-1000 opacity-100 fade-slide"
+        style="background-image: url('images/zauchensee1.jpg'); background-size: cover; background-position: center;">
+      </div>
+      <div class="absolute inset-0 transition-opacity duration-1000 opacity-0 fade-slide"
+        style="background-image: url('images/zauchensee2.jpg'); background-size: cover; background-position: center;">
+      </div>
+      <div class="absolute inset-0 transition-opacity duration-1000 opacity-0 fade-slide"
+        style="background-image: url('images/zauchensee3.jpg'); background-size: cover; background-position: center;">
+      </div>
+      <div class="absolute inset-0 transition-opacity duration-1000 opacity-0 fade-slide"
+        style="background-image: url('images/zauchenseedorp.jpg'); background-size: cover; background-position: center;">
       </div>
     </div>
-  </div>
-
-  <!-- Dots -->
-  <div class="absolute bottom-6 left-1/2 -translate-x-1/2 flex space-x-2 z-30">
-    <div class="w-3 h-3 bg-white/50 rounded-full" id="dot0" data-index="0"></div>
-    <div class="w-3 h-3 bg-white/30 rounded-full" id="dot1" data-index="1"></div>
-    <div class="w-3 h-3 bg-white/30 rounded-full" id="dot2" data-index="2"></div>
-    <div class="w-3 h-3 bg-white/30 rounded-full" id="dot3" data-index="3"></div>
-  </div>
-</section>
-
+    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/40 to-transparent z-10"></div>
+    <div class="absolute inset-0 z-20 flex items-center justify-center text-center px-6">
+      <div class="text-white max-w-2xl" data-aos="fade-up">
+        <h1 class="text-4xl md:text-6xl font-extrabold mb-4 leading-tight drop-shadow">Ski op jouw manier</h1>
+        <p class="mb-6 text-lg opacity-90 drop-shadow">Short ski’s, luxe resorts of budget voor jongeren – wij regelen
+          jouw perfecte sneeuwvakantie.</p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="aanbod.html" class="btn-primary">Bekijk aanbod</a>
+          <a href="contact.html" class="btn-outline">Vraag offerte aan</a>
+        </div>
+      </div>
+    </div>
+    <div class="absolute bottom-6 left-1/2 -translate-x-1/2 flex space-x-2 z-30">
+      <div class="dot" id="dot0" data-index="0"></div>
+      <div class="dot" id="dot1" data-index="1"></div>
+      <div class="dot" id="dot2" data-index="2"></div>
+      <div class="dot" id="dot3" data-index="3"></div>
+    </div>
+  </section>
 
   <!-- AANBOD -->
   <section id="aanbod" class="py-24 bg-gray-50">
-  <div class="max-w-6xl mx-auto px-6 text-center">
-    <h2 class="text-3xl font-bold mb-4">Short ski’s op maat voor bedrijven</h2>
-    <p class="text-gray-600 max-w-2xl mx-auto mb-12">
-      Wij organiseren zakelijke short ski's volledig op maat. Hieronder zie je onze populairste formule en een voorbeeld op aanvraag.
-    </p>
+    <div class="max-w-screen-lg mx-auto px-6 text-center">
+      <h2 class="text-4xl font-bold mb-6" data-aos="fade-up">Voor elk type skiër</h2>
+      <p class="text-gray-600 max-w-2xl mx-auto mb-12" data-aos="fade-up" data-aos-delay="100">
+        Of je nu een exclusieve beleving zoekt, een teambuilding voor je bedrijf plant of als trouwe klant nostalgie wil
+        herbeleven – CoolTravel biedt het allemaal.
+      </p>
+      <div class="flex flex-col lg:flex-row justify-center gap-8 items-stretch text-left">
 
-    <div class="grid md:grid-cols-2 gap-8 text-left">
-      
-      <!-- Aanbevolen pakket -->
-      <div class="package-card">
-        <h3>🏔️ Zauchensee – Hotel First Peak</h3>
-        <p>Onze populairste locatie: een charmant bergdorp met directe toegang tot het Ski Amadé-gebied (750 km pistes). Verblijf in het gloednieuwe luxe Hotel First Peak. Ideaal voor teambuilding en bedrijfsuitjes.</p>
-        <span>Prijs op aanvraag</span>
-      </div>
+        <a href="skinostalgie.html" class="package-card max-w-sm w-full hover:shadow-lg transition" data-aos="zoom-in">
+          <h3>🕰️ Ski Nostalgie</h3>
+          <p>Voor oud-klanten van de Pirres Club die de sfeer van vroeger opnieuw willen beleven – in First Peak,
+            Zauchensee.</p>
+          <span class="text-blue-600 font-semibold">Schoolvakantie – beperkte plaatsen</span>
+        </a>
 
-      <!-- Voorbeeld op maat -->
-      <div class="package-card">
-        <h3>🛷 Short Ski op aanvraag</h3>
-        <p>Op zoek naar een ski-uitstap voor je team in Frankrijk, Italië of Zwitserland? Wij organiseren short ski’s op maat, met vervoer, verblijf en activiteiten volledig afgestemd op jouw bedrijf.</p>
-        <span>Prijs op aanvraag</span>
-      </div>
+        <a href="skivakantie.html" class="package-card max-w-sm w-full hover:shadow-lg transition" data-aos="zoom-in"
+          data-aos-delay="100">
+          <h3>⛷️ Luxe Skivakanties</h3>
+          <p>Voor wie op zoek is naar comfort, wellness en service. Denk: tophotels, privélessen, gourmetdiners & spa.
+          </p>
+          <span class="text-blue-600 font-semibold">Vanaf €995 p.p.</span>
+        </a>
 
-    </div>
-  </div>
-</section>
-
-
-
-  <!-- TROEVEN -->
-  <section id="troeven" class="py-24">
-    <div class="max-w-6xl mx-auto px-6 text-center">
-      <h2 class="text-3xl font-bold mb-12">Waarom kiezen voor Cool Travel?</h2>
-      <div class="grid md:grid-cols-3 gap-8">
-        <div class="card-hover bg-white p-6 rounded-xl shadow">
-          <h3 class="font-bold mb-2">🏨 Luxe hotels</h3>
-          <p class="text-sm text-gray-600">De beste hotels vlak aan de piste gelegen.</p>
-        </div>
-        <div class="card-hover bg-white p-6 rounded-xl shadow">
-          <h3 class="font-bold mb-2">🚍 Alles geregeld</h3>
-          <p class="text-sm text-gray-600">Verblijf, transport, skipassen, begeleiding – alles op maat voor bedrijven.</p>
-        </div>
-        <div class="card-hover bg-white p-6 rounded-xl shadow">
-          <h3 class="font-bold mb-2">⭐ Teambuilding & sfeer</h3>
-          <p class="text-sm text-gray-600">Combineer ontspanning, connectie & onvergetelijke momenten op de piste.</p>
-        </div>
+        <a href="shortski.html" class="package-card max-w-sm w-full hover:shadow-lg transition" data-aos="zoom-in"
+          data-aos-delay="200">
+          <h3>🏢 Short Ski voor Bedrijven</h3>
+          <p>Ideaal voor teambuildings, ziekenhuizen of KMO’s. Alles geregeld: transport, verblijf en skipassen.</p>
+          <span class="text-blue-600 font-semibold">Prijs op aanvraag</span>
+        </a>
       </div>
     </div>
   </section>
 
+
+  <!-- ERVARING -->
+  <section id="over" class="py-24 bg-white">
+    <div class="max-w-5xl mx-auto px-6 text-center">
+      <h2 class="text-4xl font-bold mb-6" data-aos="fade-up">40+ jaar ervaring in skireizen</h2>
+      <p class="text-gray-600 max-w-2xl mx-auto mb-12" data-aos="fade-up" data-aos-delay="100">
+        CoolTravel is ontstaan uit de legendarische <strong>Pirres Club</strong>, genoemd naar onze oprichter Pirre. Al
+        meer dan vier decennia brengen wij gezinnen, bedrijven en jongeren naar de mooiste skigebieden, met Zauchensee
+        als onze onbetwiste nummer één.
+      </p>
+    </div>
+  </section>
+
   <!-- CONTACT -->
-  <form class="bg-white rounded-xl shadow-lg p-8 space-y-6 text-left max-w-xl mx-auto">
-  <div>
-    <label class="block text-sm font-semibold mb-1 text-gray-700">Naam</label>
-    <input type="text" placeholder="Jouw naam / bedrijfsnaam" required class="form-input">
-  </div>
-  <div>
-    <label class="block text-sm font-semibold mb-1 text-gray-700">E-mailadres</label>
-    <input type="email" placeholder="voorbeeld@bedrijf.be" required class="form-input">
-  </div>
-  <div>
-    <label class="block text-sm font-semibold mb-1 text-gray-700">Bericht of aanvraag</label>
-    <textarea rows="4" placeholder="Schrijf hier je vraag of offerteaanvraag..." required class="form-input resize-none"></textarea>
-  </div>
-  <button type="submit" class="btn-primary w-full">✅ Verstuur aanvraag</button>
-  <p class="text-sm text-center text-gray-500 mt-2">📞 Liever direct contact? Bel ons op <a href="tel:+32xxxxx" class="underline text-blue-300 hover:text-white">+32 xxxx</a></p>
-</form>
+  <section class="pt-36 pb-24 bg-gray-50">
+    <div class="max-w-xl mx-auto px-6">
+      <div class="bg-white rounded-xl shadow-xl p-8" data-aos="fade-up">
+        <h2 class="text-3xl font-bold mb-6 text-center">📩 Contacteer ons</h2>
+        <p class="text-gray-600 mb-8 text-center">Heb je vragen of wil je een offerte op maat? Laat je gegevens achter,
+          wij nemen binnen 24u contact op.</p>
+
+        <form action="https://formsubmit.co/info@cooltravel.be" method="POST" class="space-y-6">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_next" value="https://www.cooltravel.be/bedankt.html">
+
+          <div>
+            <label class="block text-sm font-semibold mb-1 text-gray-700">Naam</label>
+            <input type="text" name="naam" placeholder="Jouw naam / bedrijfsnaam" required class="form-input">
+          </div>
+
+          <div>
+            <label class="block text-sm font-semibold mb-1 text-gray-700">E-mailadres</label>
+            <input type="email" name="email" placeholder="voorbeeld@bedrijf.be" required class="form-input">
+          </div>
+
+          <div>
+            <label class="block text-sm font-semibold mb-1 text-gray-700">Bericht of aanvraag</label>
+            <textarea name="bericht" rows="4" placeholder="Schrijf hier je vraag of offerteaanvraag..." required
+              class="form-input resize-none"></textarea>
+          </div>
+
+          <button type="submit" class="btn-primary w-full">✅ Verzend aanvraag</button>
+          <p class="text-sm text-center text-gray-500 mt-3">📞 Liever direct contact? Mail ons op <a
+              href="mailto:info@cooltravel.be"
+              class="underline text-blue-600 hover:text-blue-800">info@cooltravel.be</a></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+
 
 
   <!-- FOOTER -->
-  <footer class="text-center text-sm py-6 text-gray-500 bg-gray-100">
-    © 2025 CoolTravel – Alle rechten voorbehouden
+  <footer class="text-center text-sm py-6 text-gray-500 bg-white border-t">
+    © 2025 CoolTravel – Sinds 1980 expert in skivakanties
   </footer>
 
-
+  <!-- Scripts -->
   <script>
-  const slides = document.querySelectorAll('.fade-slide');
-  const dots = [0,1,2,3].map(i => document.getElementById('dot'+i));
-  let current = 0;
-  let interval;
+    const slides = document.querySelectorAll('.fade-slide');
+    const dots = [0, 1, 2, 3].map(i => document.getElementById('dot' + i));
+    let current = 0;
+    let interval;
 
-  function showSlide(index) {
-    slides[current].classList.remove('opacity-100');
-    slides[current].classList.add('opacity-0');
-    dots[current].classList.remove('bg-white/50');
-    dots[current].classList.add('bg-white/30');
+    function showSlide(index) {
+      slides[current].classList.remove('opacity-100');
+      slides[current].classList.add('opacity-0');
+      dots[current].classList.remove('bg-white/90');
+      dots[current].classList.add('bg-white/30');
 
-    current = index;
-    slides[current].classList.remove('opacity-0');
-    slides[current].classList.add('opacity-100');
-    dots[current].classList.remove('bg-white/30');
-    dots[current].classList.add('bg-white/50');
-  }
+      current = index;
+      slides[current].classList.remove('opacity-0');
+      slides[current].classList.add('opacity-100');
+      dots[current].classList.remove('bg-white/30');
+      dots[current].classList.add('bg-white/90');
+    }
 
-  function nextSlide() {
-    showSlide((current + 1) % slides.length);
-  }
+    function nextSlide() {
+      showSlide((current + 1) % slides.length);
+    }
 
-  function startSlider() {
-    interval = setInterval(nextSlide, 6000);
-  }
+    function startSlider() {
+      interval = setInterval(nextSlide, 6000);
+    }
 
-  dots.forEach(dot => {
-    dot.addEventListener('click', (e) => {
-      clearInterval(interval);
-      showSlide(parseInt(e.target.dataset.index));
-      startSlider();
+    dots.forEach(dot => {
+      dot.addEventListener('click', (e) => {
+        clearInterval(interval);
+        showSlide(parseInt(e.target.dataset.index));
+        startSlider();
+      });
     });
-  });
 
-  startSlider();
-</script>
-
-
+    startSlider();
+  </script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init({ once: true });</script>
 </body>
+
 </html>

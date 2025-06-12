@@ -5,24 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Inschrijvingsformulier – CoolTravel</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/custom.css" />
-  <style>
-    body {
-      font-family: 'Inter', sans-serif;
-      scroll-behavior: smooth;
-    }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
 </head>
-<body class="bg-gray-50 text-gray-800">
+<body class="bg-gray-50 text-gray-800 font-inter">
 
-  <!-- Container -->
   <section class="min-h-screen flex items-center justify-center py-20 px-6">
-    <div class="bg-white p-10 rounded-xl shadow-lg w-full max-w-2xl">
+    <div class="bg-white p-10 rounded-xl shadow-2xl w-full max-w-2xl">
       <h1 class="text-3xl font-bold mb-6 text-center">Inschrijvingsformulier</h1>
 
       <form id="inschrijfformulier" class="space-y-6">
-        <!-- Naam -->
         <div class="flex flex-col sm:flex-row gap-4">
           <div class="w-full">
             <label class="block text-sm font-medium mb-1">Voornaam</label>
@@ -34,25 +26,21 @@
           </div>
         </div>
 
-        <!-- Bedrijf -->
         <div>
           <label class="block text-sm font-medium mb-1">Bedrijf (optioneel)</label>
           <input type="text" name="bedrijf" class="form-input">
         </div>
 
-        <!-- Adres -->
         <div>
           <label class="block text-sm font-medium mb-1">Adres</label>
           <input type="text" name="adres" required class="form-input">
         </div>
 
-        <!-- Postcode -->
         <div>
           <label class="block text-sm font-medium mb-1">Postcode</label>
           <input type="text" name="postcode" required class="form-input">
         </div>
 
-        <!-- GSM & Email -->
         <div class="flex flex-col sm:flex-row gap-4">
           <div class="w-full">
             <label class="block text-sm font-medium mb-1">GSM-nummer</label>
@@ -64,13 +52,11 @@
           </div>
         </div>
 
-        <!-- Geboortedatum -->
         <div>
           <label class="block text-sm font-medium mb-1">Geboortedatum</label>
           <input type="date" name="geboortedatum" required class="form-input">
         </div>
 
-        <!-- Verzekering -->
         <div>
           <label class="block text-sm font-medium mb-2">Annulatie- en bijstandsverzekering gewenst?</label>
           <div class="flex items-center gap-6">
@@ -85,7 +71,6 @@
           </div>
         </div>
 
-        <!-- Verzenden -->
         <div class="pt-4">
           <button type="submit" class="btn-primary w-full">Inschrijving versturen</button>
         </div>
@@ -95,8 +80,7 @@
     </div>
   </section>
 
-  <!-- JavaScript -->
-  <script>
+<script>
   const form = document.getElementById('inschrijfformulier');
   const bevestiging = document.getElementById('bevestiging');
 
@@ -134,9 +118,8 @@
       console.error("Fout tijdens verzenden:", error);
       alert("Netwerkfout. Controleer je verbinding of probeer opnieuw.");
     });
-  });
+  }); 
 </script>
-
 
 </body>
 </html>
