@@ -5,6 +5,9 @@
     { "source": "/contact", "destination": "/contact.html" },
     { "source": "/shortski", "destination": "/shortski.html" },
     { "source": "/skivakantie", "destination": "/skivakantie.html" },
-    { "source": "/bedankt", "destination": "/bedankt.html" }
+    { "source": "/bedankt", "destination": "/bedankt.html" },
+    { "source": "/skinostalgie", "destination": "/skinostalgie.html" },
+    { "source": "/budgetski", "destination": "/budgetski.html" },
+    { "source": "/firstpeak", "destination": "/firstpeak.html" }
   ]
 }
