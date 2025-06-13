@@ -13,53 +13,47 @@
   <!-- Navbar -->
   <header class="bg-white border-b border-gray-200 fixed top-0 left-0 w-full z-50 shadow-sm">
     <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-      <a href="index.html" class="text-xl font-extrabold text-[#0B2545] tracking-tight">CoolTravel</a>
+      <a href="/" class="text-xl font-extrabold text-[#0B2545] tracking-tight">CoolTravel</a>
       <nav class="hidden md:flex space-x-6 text-sm font-medium">
-        <a href="index.html" class="hover:text-blue-600">Home</a>
-        <a href="aanbod.html" class="hover:text-blue-600">Aanbod</a>
-        <a href="shortski.html" class="hover:text-blue-600">Short Ski</a>
-        <a href="skivakantie.html" class="hover:text-blue-600">Luxe</a>
-        <a href="budgetski.html" class="hover:text-blue-600">Budget</a>
-        <a href="contact.html" class="text-blue-600 font-semibold">Contact</a>
+        <a href="/" class="hover:text-blue-600">Home</a>
+        <a href="/aanbod" class="hover:text-blue-600">Aanbod</a>
+        <a href="/contact" class="text-blue-600 font-semibold">Contact</a>
       </nav>
     </div>
   </header>
 
   <!-- Contact Form -->
-<section class="pt-36 pb-24 bg-gray-50">
-  <div class="max-w-xl mx-auto px-6">
-    <div class="bg-white rounded-xl shadow-xl p-8" data-aos="fade-up">
-      <h2 class="text-3xl font-bold mb-6 text-center">📩 Contacteer ons</h2>
-      <p class="text-gray-600 mb-8 text-center">Heb je vragen of wil je een offerte op maat? Laat je gegevens achter, wij nemen binnen 24u contact op.</p>
+  <section class="pt-36 pb-24 bg-gray-50">
+    <div class="max-w-xl mx-auto px-6">
+      <div class="bg-white rounded-xl shadow-xl p-8">
+        <h2 class="text-3xl font-bold mb-6 text-center">📩 Contacteer ons</h2>
+        <p class="text-gray-600 mb-8 text-center">Heb je vragen of wil je een offerte op maat? Laat je gegevens achter, wij nemen binnen 24u contact op.</p>
 
-      <form action="https://formsubmit.co/info@cooltravel.be" method="POST" class="space-y-6">
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_next" value="https://www.cooltravel.be/bedankt.html">
+        <form action="https://formsubmit.co/info@cooltravel.be" method="POST" class="space-y-6">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_next" value="https://www.cooltravel.be/bedankt">
 
-        <div>
-          <label class="block text-sm font-semibold mb-1 text-gray-700">Naam</label>
-          <input type="text" name="naam" placeholder="Jouw naam / bedrijfsnaam" required class="form-input">
-        </div>
+          <div>
+            <label class="block text-sm font-semibold mb-1 text-gray-700">Naam</label>
+            <input type="text" name="naam" placeholder="Jouw naam / bedrijfsnaam" required class="form-input">
+          </div>
 
-        <div>
-          <label class="block text-sm font-semibold mb-1 text-gray-700">E-mailadres</label>
-          <input type="email" name="email" placeholder="voorbeeld@bedrijf.be" required class="form-input">
-        </div>
+          <div>
+            <label class="block text-sm font-semibold mb-1 text-gray-700">E-mailadres</label>
+            <input type="email" name="email" placeholder="voorbeeld@bedrijf.be" required class="form-input">
+          </div>
 
-        <div>
-          <label class="block text-sm font-semibold mb-1 text-gray-700">Bericht of aanvraag</label>
-          <textarea name="bericht" rows="4" placeholder="Schrijf hier je vraag of offerteaanvraag..." required class="form-input resize-none"></textarea>
-        </div>
+          <div>
+            <label class="block text-sm font-semibold mb-1 text-gray-700">Bericht of aanvraag</label>
+            <textarea name="bericht" rows="4" placeholder="Schrijf hier je vraag of offerteaanvraag..." required class="form-input resize-none"></textarea>
+          </div>
 
-        <button type="submit" class="btn-primary w-full">✅ Verzend aanvraag</button>
-        <p class="text-sm text-center text-gray-500 mt-3">📞 Liever direct contact? Mail ons op <a href="mailto:info@cooltravel.be" class="underline text-blue-600 hover:text-blue-800">info@cooltravel.be</a></p>
-      </form>
+          <button type="submit" class="btn-primary w-full">✅ Verzend aanvraag</button>
+          <p class="text-sm text-center text-gray-500 mt-3">📞 Liever direct contact? Mail ons op <a href="mailto:info@cooltravel.be" class="underline text-blue-600 hover:text-blue-800">info@cooltravel.be</a></p>
+        </form>
+      </div>
     </div>
-  </div>
-</section>
-
-
-
+  </section>
 
   <!-- Footer -->
   <footer class="text-center text-sm py-8 text-gray-500 bg-white border-t">
