@@ -1,8 +1,10 @@
 {
   "rewrites": [
-    {
-      "source": "/",
-      "destination": "/index.html"
-    }
+    { "source": "/", "destination": "/index.html" },
+    { "source": "/aanbod", "destination": "/aanbod.html" },
+    { "source": "/contact", "destination": "/contact.html" },
+    { "source": "/shortski", "destination": "/shortski.html" },
+    { "source": "/skivakantie", "destination": "/skivakantie.html" },
+    { "source": "/bedankt", "destination": "/bedankt.html" }
   ]
 }
