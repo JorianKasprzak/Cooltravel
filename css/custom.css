@@ -105,3 +105,12 @@ body {
 .dot.bg-white\/90 {
   background-color: rgba(255, 255, 255, 0.9);
 }
+
+#mobile-menu {
+  position: fixed;
+  z-index: 9999;
+}
+
+html, body {
+  overflow-x: hidden;
+}

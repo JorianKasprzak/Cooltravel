@@ -8,28 +8,28 @@
   <link rel="stylesheet" href="css/custom.css" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-  <script src="js/menu.js" defer></script>
+  <meta name="description" content="Short ski’s voor bedrijven, luxe skivakanties & budget snowtrips – georganiseerd door CoolTravel." />
 </head>
 <body class="bg-white text-gray-800 font-inter">
 
-<!-- Navbar -->
-<header class="fixed top-0 left-0 w-full z-50 backdrop-blur bg-white/80 border-b shadow-sm">
-  <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-    <a href="/" class="text-xl font-extrabold text-[#0B2545] tracking-tight">CoolTravel</a>
-    <nav class="hidden md:flex space-x-6 text-sm font-medium">
-      <a href="/" class="hover:text-blue-600">Home</a>
-      <a href="/aanbod" class="hover:text-blue-600">Aanbod</a>
-      <a href="/#aanbod" class="hover:text-blue-600">Over ons</a>
-      <a href="/contact" class="hover:text-blue-600">Contact</a>
-    </nav>
-    <button id="menu-toggle" class="md:hidden text-2xl text-[#0B2545]">☰</button>
-  </div>
-</header>
+  <!-- Navbar -->
+  <header class="fixed top-0 left-0 w-full z-50 backdrop-blur bg-white/80 border-b shadow-sm">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <a href="/" class="text-xl font-extrabold text-[#0B2545] tracking-tight">CoolTravel</a>
+      <nav class="hidden md:flex space-x-6 text-sm font-medium">
+        <a href="/" class="hover:text-blue-600">Home</a>
+        <a href="/aanbod" class="hover:text-blue-600">Aanbod</a>
+        <a href="/#aanbod" class="hover:text-blue-600">Over ons</a>
+        <a href="/contact" class="hover:text-blue-600">Contact</a>
+      </nav>
+      <button id="menu-toggle" class="md:hidden text-2xl text-[#0B2545]">☰</button>
+    </div>
+  </header>
 
-<!-- Mobile overlay + menu -->
+ <!-- Mobile overlay + menu -->
 <div id="menu-overlay" class="fixed inset-0 bg-black/50 z-40 hidden"></div>
 
-<div id="mobile-menu" class="fixed top-16 right-4 w-60 bg-white rounded-lg shadow-xl z-50 hidden flex flex-col p-6 space-y-4 text-sm font-medium">
+<div id="mobile-menu" class="fixed top-16 right-4 w-60 bg-white rounded-lg shadow-xl z-50 hidden md:hidden flex flex-col p-6 space-y-4 text-sm font-medium">
   <div class="flex justify-between items-center mb-6">
     <span class="text-xl font-extrabold text-[#0B2545]">Menu</span>
     <button id="menu-close" class="text-2xl text-gray-600">×</button>
@@ -42,14 +42,6 @@
 
 
 
-  <!-- Hero -->
-  <section class="pt-32 pb-20 bg-blue-50 text-center">
-    <div class="max-w-3xl mx-auto px-6">
-      <h1 class="text-4xl font-bold mb-4">Ons Ski-aanbod</h1>
-      <p class="text-gray-700">Van luxe retreats tot betaalbare groepsreizen – ontdek de sneeuwvakantie die bij jou past.</p>
-    </div>
-  </section>
-
   <!-- Ski Nostalgie -->
   <section class="py-24 bg-gray-50">
     <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
@@ -58,8 +50,8 @@
       </div>
       <div data-aos="fade-left">
         <h2 class="text-3xl font-bold mb-4">🎿 Ski Nostalgie</h2>
-        <p class="text-gray-600 mb-4">Voor iedereen die vroeger meeging met de legendarische Pirres Club – en die magie nog één keer wil herbeleven. In de vertrouwde sneeuw van Zauchensee, maar met het comfort van vandaag.</p>
-        <p class="text-gray-600 mb-4">Tijdens de schoolvakantie organiseren we een speciaal herbeleefmoment in Hotel First Peak, exclusief voor onze trouwe wintersporters van vroeger.</p>
+        <p class="text-gray-600 mb-4">Voor iedereen die vroeger meeging met de legendarische Pirres Club – en die magie nog één keer wil herbeleven.</p>
+        <p class="text-gray-600 mb-4">In de vertrouwde sneeuw van Zauchensee, met het comfort van vandaag.</p>
         <a href="/skinostalgie" class="btn-primary mt-4 inline-block hover:scale-105 transition">Ontdek Ski Nostalgie</a>
       </div>
     </div>
@@ -73,8 +65,7 @@
       </div>
       <div class="md:order-1" data-aos="fade-right">
         <h2 class="text-3xl font-bold mb-4">⛷️ Luxe Skivakanties</h2>
-        <p class="text-gray-600 mb-4">Onze absolute topbestemming is <strong>Hotel First Peak in Zauchensee</strong>, Oostenrijk. Een gloednieuw luxehotel midden in een charmant en sneeuwzeker dorp, met directe toegang tot Ski Amadé (750 km piste).</p>
-        <p class="text-gray-600 mb-4">Voor wie houdt van wellness, stijlvolle kamers, culinaire verwennerij en skiplezier zonder zorgen.</p>
+        <p class="text-gray-600 mb-4">Onze absolute topbestemming is <strong>Hotel First Peak in Zauchensee</strong>. Wellness, culinaire verwennerij en directe toegang tot 750 km piste.</p>
         <a href="/skivakantie" class="btn-primary mt-4 inline-block hover:scale-105 transition">Meer over Luxe skivakanties</a>
       </div>
     </div>
@@ -88,8 +79,7 @@
       </div>
       <div data-aos="fade-left">
         <h2 class="text-3xl font-bold mb-4">🏢 Short Ski voor Bedrijven</h2>
-        <p class="text-gray-600 mb-4">Speciaal voor bedrijven, ziekenhuizen en teams die op korte tijd willen genieten van sneeuw, sfeer en teambuilding.</p>
-        <p class="text-gray-600 mb-4">Wij zorgen voor het volledige pakket: vervoer, verblijf, skipassen, ontbijt, avondeten en indien gewenst ook begeleiding.</p>
+        <p class="text-gray-600 mb-4">Voor bedrijven en ziekenhuizen. Alles geregeld: vervoer, verblijf, skipassen, maaltijden en optioneel begeleiding.</p>
         <a href="/shortski" class="btn-primary mt-4 inline-block hover:scale-105 transition">Bekijk short ski's</a>
       </div>
     </div>
@@ -103,19 +93,20 @@
       </div>
       <div class="md:order-1" data-aos="fade-right">
         <h2 class="text-3xl font-bold mb-4">🎉 Budget Ski voor Jongvolwassenen</h2>
-        <p class="text-gray-600 mb-4">Op zoek naar een betaalbare maar onvergetelijke wintersportervaring met vrienden of studentenclub?</p>
-        <p class="text-gray-600 mb-4">Wij selecteren de beste budgetvriendelijke accommodaties met goede ligging, sfeer en après-ski.</p>
+        <p class="text-gray-600 mb-4">Voor vrienden of studentenclubs. Betaalbare accommodaties met sfeer, ligging en après-ski.</p>
         <a href="/budgetski" class="btn-primary mt-4 inline-block hover:scale-105 transition">Vraag info aan</a>
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
+ <!-- Footer -->
   <footer class="text-sm text-center py-6 text-gray-500 bg-gray-100">
     © 2025 CoolTravel – Specialist in skivakanties sinds 1980
   </footer>
 
+  <!-- Scripts -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>AOS.init({ once: true });</script>
+  <script src="js/menu.js"></script>
 </body>
 </html>
