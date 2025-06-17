@@ -43,3 +43,37 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
+
+
+// Toggle Info dropdown (desktop)
+document.addEventListener("DOMContentLoaded", function () {
+  const infoToggle = document.getElementById("info-toggle");
+  const infoMenu = document.getElementById("info-menu");
+
+  let isInfoOpen = false;
+
+  infoToggle.addEventListener("click", (e) => {
+    e.preventDefault();
+    isInfoOpen = !isInfoOpen;
+    infoMenu.classList.toggle("hidden", !isInfoOpen);
+  });
+
+  // Sluiten bij klik buiten menu
+  document.addEventListener("click", (e) => {
+    if (!infoMenu.contains(e.target) && !infoToggle.contains(e.target)) {
+      infoMenu.classList.add("hidden");
+      isInfoOpen = false;
+    }
+  });
+});
+
+
+// Mobile info toggle
+const mobileInfoToggle = document.getElementById("mobile-info-toggle");
+const mobileInfoMenu = document.getElementById("mobile-info-menu");
+
+if (mobileInfoToggle && mobileInfoMenu) {
+  mobileInfoToggle.addEventListener("click", () => {
+    mobileInfoMenu.classList.toggle("hidden");
+  });
+}

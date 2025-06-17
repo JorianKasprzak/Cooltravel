@@ -16,20 +16,40 @@
 <header class="fixed top-0 left-0 w-full z-50 backdrop-blur bg-white/80 border-b shadow-sm">
   <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
     <a href="/" class="text-xl font-extrabold text-[#0B2545] tracking-tight">CoolTravel</a>
-    <nav class="hidden md:flex space-x-6 text-sm font-medium">
+
+    <nav class="hidden md:flex space-x-6 text-sm font-medium items-center relative">
       <a href="/" class="hover:text-blue-600">Home</a>
       <a href="/aanbod" class="hover:text-blue-600">Aanbod</a>
       <a href="/#aanbod" class="hover:text-blue-600">Over ons</a>
       <a href="/contact" class="hover:text-blue-600">Contact</a>
+
+      <!-- Info Dropdown -->
+      <div class="relative">
+        <button id="info-toggle" class="hover:text-blue-600 inline-flex items-center">
+          Info
+          <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+        <div id="info-menu" class="absolute top-full mt-2 w-48 bg-white border rounded shadow-md hidden z-50">
+          <a href="/reisverzekering.html" class="block px-4 py-2 hover:bg-gray-100">Reisverzekering</a>
+          <a href="/reisvoorwaarden.html" class="block px-4 py-2 hover:bg-gray-100">Reisvoorwaarden</a>
+        </div>
+      </div>
     </nav>
+
+    <!-- Mobile toggle -->
     <button id="menu-toggle" class="md:hidden text-2xl text-[#0B2545]">☰</button>
   </div>
 </header>
 
-<!-- Mobile overlay + menu -->
+<!-- Mobile overlay -->
 <div id="menu-overlay" class="fixed inset-0 bg-black/50 z-40 hidden"></div>
 
-<div id="mobile-menu" class="fixed top-16 right-4 w-60 bg-white rounded-lg shadow-xl z-50 hidden flex flex-col p-6 space-y-4 text-sm font-medium">
+
+
+<!-- Mobile menu -->
+<div id="mobile-menu" class="fixed top-16 right-4 w-60 bg-white rounded-lg shadow-xl z-50 hidden md:hidden flex flex-col p-6 space-y-4 text-sm font-medium">
   <div class="flex justify-between items-center mb-6">
     <span class="text-xl font-extrabold text-[#0B2545]">Menu</span>
     <button id="menu-close" class="text-2xl text-gray-600">×</button>
@@ -38,6 +58,18 @@
   <a href="/aanbod" class="block hover:text-blue-600">Aanbod</a>
   <a href="/#aanbod" class="block hover:text-blue-600 scroll-close">Over ons</a>
   <a href="/contact" class="block hover:text-blue-600">Contact</a>
+  <div>
+    <button id="mobile-info-toggle" class="text-left w-full hover:text-blue-600 flex justify-between items-center">
+      Info
+      <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+      </svg>
+    </button>
+    <div id="mobile-info-menu" class="mt-2 ml-2 pl-2 border-l border-gray-200 hidden flex-col space-y-2">
+      <a href="/reisverzekering.html" class="block hover:text-blue-600">Reisverzekering</a>
+      <a href="/reisvoorwaarden.html" class="block hover:text-blue-600">Reisvoorwaarden</a>
+    </div>
+  </div>
 </div>
 
   <!-- Hero -->

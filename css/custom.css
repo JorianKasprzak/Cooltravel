@@ -114,3 +114,8 @@ body {
 html, body {
   overflow-x: hidden;
 }
+
+#mobile-menu {
+  right: 1rem !important; /* forceer het terug rechts */
+  left: auto !important;  /* voorkom fallback naar links */
+}
