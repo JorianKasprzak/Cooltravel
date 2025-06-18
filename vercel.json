@@ -9,5 +9,12 @@
     { "source": "/skinostalgie", "destination": "/skinostalgie.html" },
     { "source": "/budgetski", "destination": "/budgetski.html" },
     { "source": "/firstpeak", "destination": "/firstpeak.html" }
+  ],
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "destination": "https://cooltravel.be/$1",
+      "permanent": true
+    }
   ]
 }
