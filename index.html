@@ -20,11 +20,10 @@
 <link rel="manifest" href="favicon/site.webmanifest">
 <link rel="shortcut icon" href="favicon/favicon.ico" type="image/x-icon">
 <script>
-  if (location.protocol !== 'https:') {
+  if (location.hostname !== 'localhost' && location.protocol !== 'https:') {
     location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
   }
 </script>
-
 
 </head>
 
