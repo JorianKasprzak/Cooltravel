@@ -13,7 +13,13 @@
   "redirects": [
     {
       "source": "/(.*)",
-      "destination": "https://cooltravel.be/$1",
+      "has": [
+        {
+          "type": "host",
+          "value": "http://cooltravel.be"
+        }
+      ],
+      "destination": "https://cooltravel.be/:1",
       "permanent": true
     }
   ]
