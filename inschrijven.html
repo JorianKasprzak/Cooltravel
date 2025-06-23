@@ -10,115 +10,197 @@
 </head>
 <body class="bg-gray-50 text-gray-800 font-inter">
 
-  <section class="min-h-screen flex items-center justify-center py-20 px-6">
-    <div class="bg-white p-10 rounded-xl shadow-2xl w-full max-w-2xl">
-      <h1 class="text-3xl font-bold mb-6 text-center">Inschrijvingsformulier</h1>
+<section class="min-h-screen flex items-center justify-center py-20 px-6">
+  <div class="bg-white p-10 rounded-xl shadow-2xl w-full max-w-3xl">
+    <h1 class="text-3xl font-bold mb-6 text-center">Inschrijvingsformulier</h1>
 
-      <form id="inschrijfformulier" class="space-y-6">
-        <div class="flex flex-col sm:flex-row gap-4">
-          <div class="w-full">
-            <label class="block text-sm font-medium mb-1">Voornaam</label>
-            <input type="text" name="voornaam" required class="form-input">
-          </div>
-          <div class="w-full">
-            <label class="block text-sm font-medium mb-1">Naam</label>
-            <input type="text" name="naam" required class="form-input">
-          </div>
-        </div>
-
+    <form id="inschrijfformulier" class="space-y-6">
+      <!-- Hoofdboeker -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div>
-          <label class="block text-sm font-medium mb-1">Bedrijf (optioneel)</label>
-          <input type="text" name="bedrijf" class="form-input">
+          <label class="block text-sm font-medium mb-1">Voornaam</label>
+          <input type="text" name="voornaam" required class="form-input">
         </div>
-
         <div>
-          <label class="block text-sm font-medium mb-1">Adres</label>
-          <input type="text" name="adres" required class="form-input">
+          <label class="block text-sm font-medium mb-1">Naam</label>
+          <input type="text" name="naam" required class="form-input">
         </div>
+      </div>
 
+      <div>
+        <label class="block text-sm font-medium mb-1">Bedrijf (optioneel)</label>
+        <input type="text" name="bedrijf" class="form-input">
+      </div>
+
+      <div>
+        <label class="block text-sm font-medium mb-1">Adres</label>
+        <input type="text" name="adres" required class="form-input">
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div>
           <label class="block text-sm font-medium mb-1">Postcode</label>
           <input type="text" name="postcode" required class="form-input">
         </div>
-
-        <div class="flex flex-col sm:flex-row gap-4">
-          <div class="w-full">
-            <label class="block text-sm font-medium mb-1">GSM-nummer</label>
-            <input type="tel" name="gsm" required class="form-input">
-          </div>
-          <div class="w-full">
-            <label class="block text-sm font-medium mb-1">E-mailadres</label>
-            <input type="email" name="email" required class="form-input">
-          </div>
-        </div>
-
         <div>
           <label class="block text-sm font-medium mb-1">Geboortedatum</label>
           <input type="date" name="geboortedatum" required class="form-input">
         </div>
+      </div>
 
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div>
-          <label class="block text-sm font-medium mb-2">Annulatie- en bijstandsverzekering gewenst?</label>
-          <div class="flex items-center gap-6">
-            <label class="inline-flex items-center">
-              <input type="radio" name="verzekering" value="ja" required class="form-radio text-blue-600">
-              <span class="ml-2">Ja</span>
-            </label>
-            <label class="inline-flex items-center">
-              <input type="radio" name="verzekering" value="nee" class="form-radio text-blue-600">
-              <span class="ml-2">Nee</span>
-            </label>
-          </div>
+          <label class="block text-sm font-medium mb-1">GSM-nummer</label>
+          <input type="tel" name="gsm" required class="form-input">
         </div>
-
-        <div class="pt-4">
-          <button type="submit" class="btn-primary w-full">Inschrijving versturen</button>
+        <div>
+          <label class="block text-sm font-medium mb-1">E-mailadres</label>
+          <input type="email" name="email" required class="form-input">
         </div>
-      </form>
+      </div>
 
-      <div id="bevestiging" class="text-center text-green-600 font-medium mt-4 hidden">✅ Inschrijving succesvol verzonden!</div>
-    </div>
-  </section>
+      <!-- Verzekering -->
+      <div>
+        <label class="block text-sm font-medium mb-2">Annulatie- en bijstandsverzekering gewenst?</label>
+        <div class="flex items-center gap-6">
+          <label class="inline-flex items-center">
+            <input type="radio" name="verzekering" value="ja" required class="form-radio text-blue-600">
+            <span class="ml-2">Ja</span>
+          </label>
+          <label class="inline-flex items-center">
+            <input type="radio" name="verzekering" value="nee" class="form-radio text-blue-600">
+            <span class="ml-2">Nee</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Reisopties -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+  <div>
+    <label class="block text-sm font-medium mb-1">Kies je week</label>
+    <select name="week" id="week-select" required class="form-input">
+      <option value="">Selecteer week</option>
+      <option value="1-6 maart 2026">1 – 6 maart 2026</option>
+      <option value="8-13 maart 2026">8 – 13 maart 2026</option>
+    </select>
+  </div>
+  <div>
+    <label class="block text-sm font-medium mb-1">Aantal nachten</label>
+    <select name="nachten" id="nachten-select" required class="form-input">
+      <option value="">Aantal nachten</option>
+      <option value="4">4 nachten</option>
+      <option value="5">5 nachten</option>
+      <option value="6">Volledige week (6 nachten)</option>
+    </select>
+  </div>
+</div>
+
+<div id="aankomstdatum-veld" class="mt-4 hidden">
+  <label class="block text-sm font-medium mb-1">Aankomstdatum (binnen gekozen week)</label>
+  <input type="date" name="aankomstdatum" class="form-input">
+</div>
+
+
+      <!-- Reizigers -->
+      <div>
+        <h2 class="text-lg font-semibold mt-6 mb-2">Gegevens van alle reizigers</h2>
+        <div id="reizigers-container" class="space-y-4"></div>
+        <button type="button" id="add-reiziger" class="mt-2 text-blue-600 hover:underline">+ Reiziger toevoegen</button>
+      </div>
+
+      <!-- Versturen -->
+      <div class="pt-4">
+        <button type="submit" class="btn-primary w-full">Inschrijving versturen</button>
+      </div>
+    </form>
+
+    <div id="bevestiging" class="text-center text-green-600 font-medium mt-4 hidden">✅ Inschrijving succesvol verzonden!</div>
+  </div>
+</section>
 
 <script>
-  const form = document.getElementById('inschrijfformulier');
-  const bevestiging = document.getElementById('bevestiging');
+const container = document.getElementById('reizigers-container');
+const btnAdd = document.getElementById('add-reiziger');
+let reizigerIndex = 0;
 
-  form.addEventListener('submit', function (e) {
-    e.preventDefault();
+function createReizigerBlock() {
+  const div = document.createElement('div');
+  div.className = "bg-gray-50 p-4 rounded border";
+  div.innerHTML = `
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div>
+        <label class="block text-sm font-medium mb-1">Voornaam + naam</label>
+        <input type="text" name="reiziger_naam_${reizigerIndex}" required class="form-input">
+      </div>
+      <div>
+        <label class="block text-sm font-medium mb-1">Leeftijd</label>
+        <input type="number" name="reiziger_leeftijd_${reizigerIndex}" required class="form-input">
+      </div>
+    </div>
+    <div class="mt-3">
+      <label class="block text-sm font-medium mb-1">Kamertype</label>
+      <select name="reiziger_kamer_${reizigerIndex}" required class="form-input">
+        <option value="">Selecteer kamer</option>
+        <option value="2-persoonskamer">2-persoonskamer</option>
+        <option value="2-persoonskamer deluxe">2-persoonskamer deluxe</option>
+        <option value="1-persoonskamer">1-persoonskamer</option>
+      </select>
+    </div>
+  `;
+  container.appendChild(div);
+  reizigerIndex++;
+}
 
-    const data = {
-      voornaam: form.voornaam.value,
-      naam: form.naam.value,
-      bedrijf: form.bedrijf.value,
-      adres: form.adres.value,
-      postcode: form.postcode.value,
-      gsm: form.gsm.value,
-      email: form.email.value,
-      geboortedatum: form.geboortedatum.value,
-      verzekering: form.querySelector('[name="verzekering"]:checked')?.value || ""
-    };
+btnAdd.addEventListener('click', createReizigerBlock);
+createReizigerBlock(); // start met 1 reiziger
 
-    fetch("JOUW_WEBAPP_URL_HIER", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(data)
-    })
-    .then(response => {
-      if (response.ok) {
-        form.reset();
-        bevestiging.classList.remove("hidden");
-      } else {
-        alert("Er ging iets mis met het versturen van je inschrijving.");
-      }
-    })
-    .catch(error => {
-      console.error("Fout tijdens verzenden:", error);
-      alert("Netwerkfout. Controleer je verbinding of probeer opnieuw.");
-    });
-  }); 
+// Form handler
+const form = document.getElementById('inschrijfformulier');
+form.addEventListener('submit', function (e) {
+  e.preventDefault();
+
+  const formData = new FormData(form);
+  const data = {};
+  for (const [key, value] of formData.entries()) {
+    data[key] = value;
+  }
+
+  fetch("JOUW_WEBAPP_URL_HIER", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(data)
+  })
+  .then(res => {
+    if (res.ok) {
+      form.reset();
+      container.innerHTML = "";
+      createReizigerBlock();
+      document.getElementById("bevestiging").classList.remove("hidden");
+    } else {
+      alert("Er ging iets mis met het versturen van je inschrijving.");
+    }
+  })
+  .catch(err => {
+    console.error(err);
+    alert("Netwerkfout. Probeer opnieuw.");
+  });
+});
+
+const nachtenSelect = document.getElementById('nachten-select');
+const aankomstVeld = document.getElementById('aankomstdatum-veld');
+const aankomstInput = aankomstVeld.querySelector('input');
+
+nachtenSelect.addEventListener('change', () => {
+  if (nachtenSelect.value === "4" || nachtenSelect.value === "5") {
+    aankomstVeld.classList.remove('hidden');
+    aankomstInput.required = true;
+  } else {
+    aankomstVeld.classList.add('hidden');
+    aankomstInput.required = false;
+    aankomstInput.value = "";
+  }
+});
+
 </script>
 
 </body>

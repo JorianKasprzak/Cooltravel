@@ -8,7 +8,8 @@
     { "source": "/bedankt", "destination": "/bedankt.html" },
     { "source": "/skinostalgie", "destination": "/skinostalgie.html" },
     { "source": "/budgetski", "destination": "/budgetski.html" },
-    { "source": "/firstpeak", "destination": "/firstpeak.html" }
+    { "source": "/firstpeak", "destination": "/firstpeak.html" },
+{ "source": "/inschrijven", "destination": "/inschrijven.html" }
   ]
 }
 
