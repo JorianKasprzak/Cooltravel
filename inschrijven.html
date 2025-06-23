@@ -165,7 +165,8 @@ form.addEventListener('submit', function (e) {
     data[key] = value;
   }
 
- fetch("https://script.google.com/macros/s/AKfycbyIWnXh1IG7oKxLhUk5Kr0BM8l2SSw34jTeXmc1ocNdYFsdpJ1PZbe4MTOF6heC2_ik/", {
+fetch("/api/submit", {
+
   method: "POST",
   headers: { "Content-Type": "application/json" },
   body: JSON.stringify(data)
