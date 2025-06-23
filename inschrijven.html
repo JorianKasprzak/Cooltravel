@@ -165,11 +165,10 @@ form.addEventListener('submit', function (e) {
     data[key] = value;
   }
 
-  fetch("Jhttps://script.google.com/macros/s/AKfycbwyfB_OoXmrzK4mHp7oKnLCdPGVmwLzUUp9tMbZzVnsICXXUx33DlJJQtLUY7JmzE8d/execR", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(data)
-  })
+  fetch("https://script.google.com/macros/s/AKfycbwyfB_OoXmrzK4mHp7oKnLCdPGVmwLzUUp9tMbZzVnsICXXUx33DlJJQtLUY7JmzE8d/exec", {
+     method: "POST",
+  body: new FormData(form)
+})
   .then(res => {
     if (res.ok) {
       form.reset();
