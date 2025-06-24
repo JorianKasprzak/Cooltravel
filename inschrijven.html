@@ -18,18 +18,36 @@
       <!-- Hoofdboeker -->
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div>
-          <label class="block text-sm font-medium mb-1">Voornaam</label>
-          <input type="text" name="voornaam" required class="form-input">
-        </div>
-        <div>
           <label class="block text-sm font-medium mb-1">Naam</label>
           <input type="text" name="naam" required class="form-input">
         </div>
+        <div>
+          <label class="block text-sm font-medium mb-1">Voornaam</label>
+          <input type="text" name="voornaam" required class="form-input">
+        </div>
       </div>
 
+      <!-- Facturatie op bedrijf -->
       <div>
-        <label class="block text-sm font-medium mb-1">Bedrijf (optioneel)</label>
-        <input type="text" name="bedrijf" class="form-input">
+        <label class="inline-flex items-center">
+          <input type="checkbox" id="factuur-checkbox" class="form-checkbox text-blue-600">
+          <span class="ml-2">Ik wens een factuur op naam van mijn bedrijf</span>
+        </label>
+      </div>
+
+      <div id="factuur-velden" class="mt-4 space-y-4 hidden">
+        <div>
+          <label class="block text-sm font-medium mb-1">Bedrijfsnaam</label>
+          <input type="text" name="factuur_bedrijfsnaam" class="form-input">
+        </div>
+        <div>
+          <label class="block text-sm font-medium mb-1">Adres bedrijf</label>
+          <input type="text" name="factuur_adres" class="form-input">
+        </div>
+        <div>
+          <label class="block text-sm font-medium mb-1">BTW-nummer</label>
+          <input type="text" name="factuur_btw" class="form-input">
+        </div>
       </div>
 
       <div>
@@ -76,30 +94,29 @@
 
       <!-- Reisopties -->
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-  <div>
-    <label class="block text-sm font-medium mb-1">Kies je week</label>
-    <select name="week" id="week-select" required class="form-input">
-      <option value="">Selecteer week</option>
-      <option value="1-6 maart 2026">1 – 6 maart 2026</option>
-      <option value="8-13 maart 2026">8 – 13 maart 2026</option>
-    </select>
-  </div>
-  <div>
-    <label class="block text-sm font-medium mb-1">Aantal nachten</label>
-    <select name="nachten" id="nachten-select" required class="form-input">
-      <option value="">Aantal nachten</option>
-      <option value="4">4 nachten</option>
-      <option value="5">5 nachten</option>
-      <option value="6">Volledige week (6 nachten)</option>
-    </select>
-  </div>
-</div>
+        <div>
+          <label class="block text-sm font-medium mb-1">Kies je week</label>
+          <select name="week" id="week-select" required class="form-input">
+            <option value="">Selecteer week</option>
+            <option value="1-6 maart 2026">1 – 6 maart 2026</option>
+            <option value="8-13 maart 2026">8 – 13 maart 2026</option>
+          </select>
+        </div>
+        <div>
+          <label class="block text-sm font-medium mb-1">Aantal nachten</label>
+          <select name="nachten" id="nachten-select" required class="form-input">
+            <option value="">Aantal nachten</option>
+            <option value="4">4 nachten</option>
+            <option value="5">5 nachten</option>
+            <option value="6">Volledige week (6 nachten)</option>
+          </select>
+        </div>
+      </div>
 
-<div id="aankomstdatum-veld" class="mt-4 hidden">
-  <label class="block text-sm font-medium mb-1">Aankomstdatum (binnen gekozen week)</label>
-  <input type="date" name="aankomstdatum" class="form-input">
-</div>
-
+      <div id="aankomstdatum-veld" class="mt-4 hidden">
+        <label class="block text-sm font-medium mb-1">Aankomstdatum (binnen gekozen week)</label>
+        <input type="date" name="aankomstdatum" class="form-input">
+      </div>
 
       <!-- Reizigers -->
       <div>
@@ -129,7 +146,7 @@ function createReizigerBlock() {
   div.innerHTML = `
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
       <div>
-        <label class="block text-sm font-medium mb-1">Voornaam + naam</label>
+        <label class="block text-sm font-medium mb-1">Naam + voornaam</label>
         <input type="text" name="reiziger_naam_${reizigerIndex}" required class="form-input">
       </div>
       <div>
@@ -152,26 +169,22 @@ function createReizigerBlock() {
 }
 
 btnAdd.addEventListener('click', createReizigerBlock);
-createReizigerBlock(); // start met 1 reiziger
+createReizigerBlock();
 
-// Form handler
 const form = document.getElementById('inschrijfformulier');
 form.addEventListener('submit', function (e) {
   e.preventDefault();
-
   const formData = new FormData(form);
   const data = {};
   for (const [key, value] of formData.entries()) {
     data[key] = value;
   }
 
-fetch("/api/submit", {
-
-  method: "POST",
-  headers: { "Content-Type": "application/json" },
-  body: JSON.stringify(data)
-})
-
+  fetch("/api/submit", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(data)
+  })
   .then(res => {
     if (res.ok) {
       form.reset();
@@ -203,6 +216,12 @@ nachtenSelect.addEventListener('change', () => {
   }
 });
 
+const factuurCheckbox = document.getElementById('factuur-checkbox');
+const factuurVelden = document.getElementById('factuur-velden');
+
+factuurCheckbox.addEventListener('change', () => {
+  factuurVelden.classList.toggle('hidden', !factuurCheckbox.checked);
+});
 </script>
 
 </body>

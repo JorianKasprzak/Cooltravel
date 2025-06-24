@@ -4,7 +4,7 @@ export default async function handler(req, res) {
   }
 
   try {
-    const googleScriptUrl = 'https://script.google.com/macros/s/AKfycbx-sxh8b3E42SXM3Sw95HoCIF1d7dV9lUqpXhTBql8EBfhveZ6Fe1pJKG8IDDNUFEZN/exec';
+    const googleScriptUrl = 'https://script.google.com/macros/s/AKfycbxzCgUg-c2APXjbZvSEnNyhfoDTnWrg46_zJ7Cz_PEh26G8Fkr5QXMhYF_IXnN13JI3/exec';
 
     const response = await fetch(googleScriptUrl, {
       method: 'POST',
