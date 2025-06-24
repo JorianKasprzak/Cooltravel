@@ -142,42 +142,32 @@ let reizigerIndex = 0;
 
 function createReizigerBlock() {
   const div = document.createElement('div');
-  div.className = "bg-gray-50 p-4 rounded border relative reiziger-blok";
-  div.dataset.index = reizigerIndex;
-
+  div.className = "bg-gray-50 p-4 rounded border";
   div.innerHTML = `
-    <button type="button" class="absolute top-2 right-2 text-red-500 hover:text-red-700 text-lg font-bold remove-reiziger" title="Verwijder reiziger">×</button>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-      <div>
-        <label class="block text-sm font-medium mb-1">Naam + voornaam</label>
-        <input type="text" name="reiziger_naam_${reizigerIndex}" required class="form-input">
-      </div>
-      <div>
-        <label class="block text-sm font-medium mb-1">Leeftijd</label>
-        <input type="number" name="reiziger_leeftijd_${reizigerIndex}" required class="form-input">
-      </div>
-    </div>
-    <div class="mt-3">
-      <label class="block text-sm font-medium mb-1">Kamertype</label>
-      <select name="reiziger_kamer_${reizigerIndex}" required class="form-input">
-        <option value="">Selecteer kamer</option>
-        <option value="2-persoonskamer">2-persoonskamer</option>
-        <option value="2-persoonskamer deluxe">2-persoonskamer deluxe</option>
-        <option value="1-persoonskamer">1-persoonskamer</option>
-      </select>
-    </div>
-  `;
+  <div>
+    <label class="block text-sm font-medium mb-1">Naam + voornaam</label>
+    <input type="text" name="reiziger_naam_${reizigerIndex}" required class="form-input">
+  </div>
+  <div>
+    <label class="block text-sm font-medium mb-1">Geboortedatum</label>
+    <input type="date" name="reiziger_geboortedatum_${reizigerIndex}" required class="form-input">
+  </div>
+</div>
+<div class="mt-3">
+  <label class="block text-sm font-medium mb-1">Kamertype</label>
+  <select name="reiziger_kamer_${reizigerIndex}" required class="form-input">
+    <option value="">Selecteer kamer</option>
+    <option value="2-persoons standaardkamer">2-persoons standaardkamer</option>
+    <option value="2-persoons superior kamer">2-persoons superior kamer</option>
+    <option value="1 persoon op 2-persoons standaardkamer (single gebruik)">1 persoon op 2-persoons standaardkamer (single gebruik)</option>
+  </select>
+</div>
 
+  `;
   container.appendChild(div);
   reizigerIndex++;
 }
-
-// Verwijderblok functionaliteit
-container.addEventListener('click', function (e) {
-  if (e.target.classList.contains('remove-reiziger')) {
-    e.target.closest('.reiziger-blok').remove();
-  }
-});
 
 btnAdd.addEventListener('click', createReizigerBlock);
 createReizigerBlock();
@@ -200,7 +190,6 @@ form.addEventListener('submit', function (e) {
     if (res.ok) {
       form.reset();
       container.innerHTML = "";
-      reizigerIndex = 0;
       createReizigerBlock();
       document.getElementById("bevestiging").classList.remove("hidden");
     } else {
