@@ -142,32 +142,41 @@ let reizigerIndex = 0;
 
 function createReizigerBlock() {
   const div = document.createElement('div');
-  div.className = "bg-gray-50 p-4 rounded border";
-  div.innerHTML = `
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-  <div>
-    <label class="block text-sm font-medium mb-1">Naam + voornaam</label>
-    <input type="text" name="reiziger_naam_${reizigerIndex}" required class="form-input">
-  </div>
-  <div>
-    <label class="block text-sm font-medium mb-1">Geboortedatum</label>
-    <input type="date" name="reiziger_geboortedatum_${reizigerIndex}" required class="form-input">
-  </div>
-</div>
-<div class="mt-3">
-  <label class="block text-sm font-medium mb-1">Kamertype</label>
-  <select name="reiziger_kamer_${reizigerIndex}" required class="form-input">
-    <option value="">Selecteer kamer</option>
-    <option value="2-persoons standaardkamer">2-persoons standaardkamer</option>
-    <option value="2-persoons superior kamer">2-persoons superior kamer</option>
-    <option value="1 persoon op 2-persoons standaardkamer (single gebruik)">1 persoon op 2-persoons standaardkamer (single gebruik)</option>
-  </select>
-</div>
+  div.className = "bg-gray-50 p-4 rounded border relative group";
 
+  div.innerHTML = `
+    <button type="button" class="absolute top-2 right-2 text-red-600 font-bold opacity-0 group-hover:opacity-100 transition" title="Verwijderen">×</button>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div>
+        <label class="block text-sm font-medium mb-1">Naam + voornaam</label>
+        <input type="text" name="reiziger_naam_${reizigerIndex}" required class="form-input">
+      </div>
+      <div>
+        <label class="block text-sm font-medium mb-1">Geboortedatum</label>
+        <input type="date" name="reiziger_geboortedatum_${reizigerIndex}" required class="form-input">
+      </div>
+    </div>
+    <div class="mt-3">
+      <label class="block text-sm font-medium mb-1">Kamertype</label>
+      <select name="reiziger_kamer_${reizigerIndex}" required class="form-input">
+        <option value="">Selecteer kamer</option>
+        <option value="2-persoons standaardkamer">2-persoons standaardkamer</option>
+        <option value="2-persoons superior kamer">2-persoons superior kamer</option>
+        <option value="1 persoon op 2-persoons standaardkamer (single gebruik)">1 persoon op 2-persoons standaardkamer (single gebruik)</option>
+      </select>
+    </div>
   `;
+
+  // Voeg delete-functionaliteit toe
+  const deleteButton = div.querySelector("button");
+  deleteButton.addEventListener("click", () => {
+    div.remove();
+  });
+
   container.appendChild(div);
   reizigerIndex++;
 }
+
 
 btnAdd.addEventListener('click', createReizigerBlock);
 createReizigerBlock();
