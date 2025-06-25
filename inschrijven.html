@@ -96,25 +96,27 @@
       </div>
 
       <!-- Reisopties -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div>
-          <label class="block text-sm font-medium mb-1">Kies je week</label>
-          <select name="week" id="week-select" required class="form-input">
-            <option value="">Selecteer week</option>
-            <option value="1-6 maart 2026">1 – 6 maart 2026</option>
-            <option value="8-13 maart 2026">8 – 13 maart 2026</option>
-          </select>
-        </div>
-        <div>
-          <label class="block text-sm font-medium mb-1">Aantal nachten</label>
-          <select name="nachten" id="nachten-select" required class="form-input">
-            <option value="">Aantal nachten</option>
-            <option value="4">4 nachten</option>
-            <option value="5">5 nachten</option>
-            <option value="6">Volledige week (6 nachten)</option>
-          </select>
-        </div>
-      </div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+  <div>
+    <label class="block text-sm font-medium mb-1">Kies je week</label>
+    <select name="week" id="week-select" required class="form-input">
+      <option value="">Selecteer week</option>
+      <option value="1-6 maart 2026">1 – 6 maart 2026</option>
+      <option value="8-15 maart 2026">8 – 15 maart 2026</option>
+    </select>
+  </div>
+  <div>
+    <label class="block text-sm font-medium mb-1">Aantal nachten</label>
+    <select name="nachten" id="nachten-select" required class="form-input">
+      <option value="">Aantal nachten</option>
+      <option value="4">4 nachten</option>
+      <option value="5">5 nachten</option>
+      <option value="6">6 nachten</option>
+      <option value="7">7 nachten</option>
+    </select>
+  </div>
+</div>
+
 
       <div id="aankomstdatum-veld" class="mt-4 hidden">
   <label class="block text-sm font-medium mb-1">Aankomstdatum (binnen gekozen week)</label>
@@ -167,16 +169,12 @@ function createReizigerBlock() {
         <option value="">Selecteer kamer</option>
         <option value="2-persoons standaardkamer">2-persoons standaardkamer</option>
         <option value="2-persoons superior kamer">2-persoons superior kamer</option>
-        <option value="1 persoon op 2-persoons standaardkamer (single gebruik)">1 persoon op 2-persoons standaardkamer (single gebruik)</option>
+        <option value="1 persoon op 2-persoonskamer (single gebruik)">1 persoon op 2-persoonskamer (single gebruik)</option>
       </select>
     </div>
   `;
 
-  const deleteButton = div.querySelector("button");
-  deleteButton.addEventListener("click", () => {
-    div.remove();
-  });
-
+  div.querySelector("button").addEventListener("click", () => div.remove());
   container.appendChild(div);
   reizigerIndex++;
 }
@@ -217,34 +215,56 @@ form.addEventListener('submit', function (e) {
 const weekSelect = document.getElementById('week-select');
 const nachtenSelect = document.getElementById('nachten-select');
 const aankomstVeld = document.getElementById('aankomstdatum-veld');
-const aankomstInput = aankomstVeld.querySelector('input');
+const aankomstSelect = document.getElementById('aankomst-select');
+
+function updateNachtenOptions() {
+  nachtenSelect.innerHTML = `<option value="">Aantal nachten</option>`;
+
+  if (weekSelect.value === "1-6 maart 2026") {
+    nachtenSelect.innerHTML += `<option value="4">4 nachten</option>`;
+    nachtenSelect.innerHTML += `<option value="5">5 nachten</option>`;
+  } else if (weekSelect.value === "8-15 maart 2026") {
+  nachtenSelect.innerHTML += `<option value="4">4 nachten</option>`;
+  nachtenSelect.innerHTML += `<option value="5">5 nachten</option>`;
+  nachtenSelect.innerHTML += `<option value="6">6 nachten</option>`;
+  nachtenSelect.innerHTML += `<option value="7">Volledige week (7 nachten)</option>`;
+}
+
+
+  updateAankomstDatum(); // reset aankomst bij wijziging week
+}
 
 function updateAankomstDatum() {
   const week = weekSelect.value;
   const nachten = nachtenSelect.value;
-  const aankomstSelect = document.getElementById('aankomst-select');
 
-  aankomstSelect.innerHTML = ""; // reset opties
-
+  aankomstSelect.innerHTML = "";
   const opties = [];
 
   if (week === "1-6 maart 2026") {
     if (nachten === "4") {
       opties.push(["2026-03-01", "1 maart 2026 (zondag)"]);
       opties.push(["2026-03-02", "2 maart 2026 (maandag)"]);
-      opties.push(["2026-03-03", "3 maart 2026 (dinsdag)"]);
-    } else if (nachten === "5") {
-      opties.push(["2026-03-01", "1 maart 2026 (zondag)"]);
-      opties.push(["2026-03-02", "2 maart 2026 (maandag)"]);
+    } else {
+      // bij 5 nachten = vaste aankomst, geen keuze
+      aankomstVeld.classList.add('hidden');
+      aankomstSelect.required = false;
+      return;
     }
   }
 
-  if (week === "8-13 maart 2026") {
+   // WEEK 2 – 8 t.e.m. 15 maart (7 nachten beschikbaar)
+  if (week === "8-15 maart 2026") {
     if (nachten === "4") {
       opties.push(["2026-03-08", "8 maart 2026 (zondag)"]);
       opties.push(["2026-03-09", "9 maart 2026 (maandag)"]);
       opties.push(["2026-03-10", "10 maart 2026 (dinsdag)"]);
+      opties.push(["2026-03-11", "11 maart 2026 (woensdag)"]);
     } else if (nachten === "5") {
+      opties.push(["2026-03-08", "8 maart 2026 (zondag)"]);
+      opties.push(["2026-03-09", "9 maart 2026 (maandag)"]);
+      opties.push(["2026-03-10", "10 maart 2026 (dinsdag)"]);
+    } else if (nachten === "6") {
       opties.push(["2026-03-08", "8 maart 2026 (zondag)"]);
       opties.push(["2026-03-09", "9 maart 2026 (maandag)"]);
     }
@@ -263,17 +283,14 @@ function updateAankomstDatum() {
   } else {
     aankomstVeld.classList.add('hidden');
     aankomstSelect.required = false;
-    aankomstSelect.innerHTML = "";
   }
 }
 
-
+weekSelect.addEventListener('change', updateNachtenOptions);
 nachtenSelect.addEventListener('change', updateAankomstDatum);
-weekSelect.addEventListener('change', updateAankomstDatum);
 
 const factuurCheckbox = document.getElementById('factuur-checkbox');
 const factuurVelden = document.getElementById('factuur-velden');
-
 factuurCheckbox.addEventListener('change', () => {
   factuurVelden.classList.toggle('hidden', !factuurCheckbox.checked);
 });
