@@ -12,7 +12,8 @@
 
 <section class="min-h-screen flex items-center justify-center py-20 px-6">
   <div class="bg-white p-10 rounded-xl shadow-2xl w-full max-w-3xl">
-    <h1 class="text-3xl font-bold mb-6 text-center">Inschrijvingsformulier</h1>
+    <h1 class="text-3xl font-bold mb-6 text-center break-words text-balance">Inschrijvingsformulier</h1>
+
 
     <form id="inschrijfformulier" class="space-y-6">
       <!-- Hoofdboeker -->
@@ -28,27 +29,29 @@
       </div>
 
       <!-- Facturatie op bedrijf -->
-      <div>
-        <label class="inline-flex items-center">
-          <input type="checkbox" id="factuur-checkbox" class="form-checkbox text-blue-600">
-          <span class="ml-2">Ik wens een factuur op naam van mijn bedrijf</span>
-        </label>
-      </div>
+<div>
+  <label class="inline-flex items-center">
+    <input type="checkbox" id="factuur-checkbox" class="form-checkbox text-blue-600">
+    <span class="ml-2">Ik wens een factuur op naam van mijn bedrijf</span>
+  </label>
+</div>
 
-      <div id="factuur-velden" class="mt-4 space-y-4 hidden">
-        <div>
-          <label class="block text-sm font-medium mb-1">Bedrijfsnaam</label>
-          <input type="text" name="factuur_bedrijfsnaam" class="form-input">
-        </div>
-        <div>
-          <label class="block text-sm font-medium mb-1">Adres bedrijf</label>
-          <input type="text" name="factuur_adres" class="form-input">
-        </div>
-        <div>
-          <label class="block text-sm font-medium mb-1">BTW-nummer</label>
-          <input type="text" name="factuur_btw" class="form-input">
-        </div>
-      </div>
+<div id="factuur-velden" class="mt-4 space-y-4 hidden bg-yellow-50 border-l-4 border-yellow-400 p-4 rounded-md shadow-sm">
+  <h2 class="text-md font-semibold text-yellow-800 mb-2">Facturatiegegevens bedrijf</h2>
+  <div>
+    <label class="block text-sm font-medium mb-1 text-yellow-900">Bedrijfsnaam</label>
+    <input type="text" name="factuur_bedrijfsnaam" class="form-input bg-yellow-100 border-yellow-300 focus:ring-yellow-500 focus:border-yellow-500">
+  </div>
+  <div>
+    <label class="block text-sm font-medium mb-1 text-yellow-900">Adres bedrijf</label>
+    <input type="text" name="factuur_adres" class="form-input bg-yellow-100 border-yellow-300 focus:ring-yellow-500 focus:border-yellow-500">
+  </div>
+  <div>
+    <label class="block text-sm font-medium mb-1 text-yellow-900">BTW-nummer</label>
+    <input type="text" name="factuur_btw" class="form-input bg-yellow-100 border-yellow-300 focus:ring-yellow-500 focus:border-yellow-500">
+  </div>
+</div>
+
 
       <div>
         <label class="block text-sm font-medium mb-1">Adres</label>
