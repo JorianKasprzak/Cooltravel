@@ -117,9 +117,10 @@
       </div>
 
       <div id="aankomstdatum-veld" class="mt-4 hidden">
-        <label class="block text-sm font-medium mb-1">Aankomstdatum (binnen gekozen week)</label>
-        <input type="date" name="aankomstdatum" class="form-input">
-      </div>
+  <label class="block text-sm font-medium mb-1">Aankomstdatum (binnen gekozen week)</label>
+  <select name="aankomstdatum" id="aankomst-select" class="form-input"></select>
+</div>
+
 
       <!-- Reizigers -->
       <div>
@@ -171,7 +172,6 @@ function createReizigerBlock() {
     </div>
   `;
 
-  // Voeg delete-functionaliteit toe
   const deleteButton = div.querySelector("button");
   deleteButton.addEventListener("click", () => {
     div.remove();
@@ -180,7 +180,6 @@ function createReizigerBlock() {
   container.appendChild(div);
   reizigerIndex++;
 }
-
 
 btnAdd.addEventListener('click', createReizigerBlock);
 createReizigerBlock();
@@ -215,20 +214,62 @@ form.addEventListener('submit', function (e) {
   });
 });
 
+const weekSelect = document.getElementById('week-select');
 const nachtenSelect = document.getElementById('nachten-select');
 const aankomstVeld = document.getElementById('aankomstdatum-veld');
 const aankomstInput = aankomstVeld.querySelector('input');
 
-nachtenSelect.addEventListener('change', () => {
-  if (nachtenSelect.value === "4" || nachtenSelect.value === "5") {
+function updateAankomstDatum() {
+  const week = weekSelect.value;
+  const nachten = nachtenSelect.value;
+  const aankomstSelect = document.getElementById('aankomst-select');
+
+  aankomstSelect.innerHTML = ""; // reset opties
+
+  const opties = [];
+
+  if (week === "1-6 maart 2026") {
+    if (nachten === "4") {
+      opties.push(["2026-03-01", "1 maart 2026 (zondag)"]);
+      opties.push(["2026-03-02", "2 maart 2026 (maandag)"]);
+      opties.push(["2026-03-03", "3 maart 2026 (dinsdag)"]);
+    } else if (nachten === "5") {
+      opties.push(["2026-03-01", "1 maart 2026 (zondag)"]);
+      opties.push(["2026-03-02", "2 maart 2026 (maandag)"]);
+    }
+  }
+
+  if (week === "8-13 maart 2026") {
+    if (nachten === "4") {
+      opties.push(["2026-03-08", "8 maart 2026 (zondag)"]);
+      opties.push(["2026-03-09", "9 maart 2026 (maandag)"]);
+      opties.push(["2026-03-10", "10 maart 2026 (dinsdag)"]);
+    } else if (nachten === "5") {
+      opties.push(["2026-03-08", "8 maart 2026 (zondag)"]);
+      opties.push(["2026-03-09", "9 maart 2026 (maandag)"]);
+    }
+  }
+
+  if (opties.length > 0) {
     aankomstVeld.classList.remove('hidden');
-    aankomstInput.required = true;
+    aankomstSelect.required = true;
+    aankomstSelect.innerHTML = `<option value="">Selecteer aankomstdatum</option>`;
+    opties.forEach(([val, label]) => {
+      const opt = document.createElement("option");
+      opt.value = val;
+      opt.textContent = label;
+      aankomstSelect.appendChild(opt);
+    });
   } else {
     aankomstVeld.classList.add('hidden');
-    aankomstInput.required = false;
-    aankomstInput.value = "";
+    aankomstSelect.required = false;
+    aankomstSelect.innerHTML = "";
   }
-});
+}
+
+
+nachtenSelect.addEventListener('change', updateAankomstDatum);
+weekSelect.addEventListener('change', updateAankomstDatum);
 
 const factuurCheckbox = document.getElementById('factuur-checkbox');
 const factuurVelden = document.getElementById('factuur-velden');
