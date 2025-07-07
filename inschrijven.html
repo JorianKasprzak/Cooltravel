@@ -149,24 +149,24 @@
 const prijzen = {
   "8-15 maart 2026": {
     "4": {
-      "2-persoons standaardkamer": 853,
+      "2-persoons standaardkamer": 842,
       "2-persoons superior kamer": 989,
-      "1 persoon op 2-persoonskamer (single gebruik)": 1000
+      "1 persoon op 2-persoonskamer (single gebruik)": 1242
     },
     "5": {
       "2-persoons standaardkamer": 1052,
       "2-persoons superior kamer": 1222,
-      "1 persoon op 2-persoonskamer (single gebruik)": 1000
+      "1 persoon op 2-persoonskamer (single gebruik)": 1550
     },
     "6": {
       "2-persoons standaardkamer": 1239,
       "2-persoons superior kamer": 1443,
-      "1 persoon op 2-persoonskamer (single gebruik)": 1000
+      "1 persoon op 2-persoonskamer (single gebruik)": 1836
     },
     "7": {
       "2-persoons standaardkamer": 1390,
       "2-persoons superior kamer": 1628,
-      "1 persoon op 2-persoonskamer (single gebruik)": 1000
+      "1 persoon op 2-persoonskamer (single gebruik)": 2094
     }
   }
 };
@@ -215,7 +215,8 @@ function createReizigerBlock() {
 }
 
 function updateTotaalPrijs() {
-  const week = "8-15 maart 2026";
+  const weekRaw = document.querySelector('input[name="week"]').value;
+  const week = weekRaw.replace(/–/g, '-'); // vervangt en-dash door koppelteken
   const nachten = document.getElementById('nachten-select').value;
   let totaal = 0;
 
@@ -224,13 +225,14 @@ function updateTotaalPrijs() {
     const prijsEl = blok.querySelector('.prijs-info');
     const kamer = kamerSelect.value;
     const prijs = prijzen[week]?.[nachten]?.[kamer] || 0;
-    prijsEl.textContent = prijs ? `💰 €${prijs}` : '';
+    prijsEl.textContent = prijs ? `€${prijs}` : '';
     totaal += prijs;
   });
 
   document.getElementById('totaalprijs').textContent = `Totaalprijs: €${totaal}`;
 }
 
+// Eventlisteners
 btnAdd.addEventListener('click', createReizigerBlock);
 createReizigerBlock();
 
@@ -270,14 +272,9 @@ form.addEventListener('submit', function (e) {
     });
 });
 
-const weekSelect = document.getElementById('week-select');
 const nachtenSelect = document.getElementById('nachten-select');
 const aankomstVeld = document.getElementById('aankomstdatum-veld');
 const aankomstSelect = document.getElementById('aankomst-select');
-
-// Preselecteer en disable de week-select
-weekSelect.innerHTML = `<option value="8-15 maart 2026" selected>8 – 15 maart 2026</option>`;
-weekSelect.disabled = true;
 
 function updateNachtenOptions() {
   nachtenSelect.innerHTML = `
@@ -331,11 +328,13 @@ nachtenSelect.addEventListener('change', () => {
   updateTotaalPrijs();
 });
 
+// Factuurvelden toggle
 const factuurCheckbox = document.getElementById('factuur-checkbox');
 const factuurVelden = document.getElementById('factuur-velden');
 factuurCheckbox.addEventListener('change', () => {
   factuurVelden.classList.toggle('hidden', !factuurCheckbox.checked);
 });
 
-updateNachtenOptions(); // Initieel laden van nachten opties
+updateNachtenOptions();
 </script>
+
